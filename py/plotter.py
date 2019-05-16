@@ -63,13 +63,13 @@ class Plotter:
         if after:
             df = df[df['date'] >= after]
 
-        sns.lineplot(
-            x='date', y='words', data=df,
-            markers='X', color='purple'
+        plt.plot(
+            df.date, df.words,
+            marker='D', color='purple', linestyle='--'
         )
 
         n = sorted(self.counts.items())[-1][1]
-        self.prettify(title=f'Cumulative # words written (current = {n})')
+        self.prettify(title=f'Cumulative # words written (current = {n:,})')
 
     def plot_rates(self, subplot: Subplot, **kwargs):
         plt.subplot(*subplot)
@@ -123,8 +123,12 @@ class Plotter:
             mask=mask
         )
 
+        # get mean rates
+        mu = arr.flatten().mean()               # mean of all values
+        munz = arr[arr != 0].flatten().mean()     # mean of all nonzero values
+
         self.prettify(
-            title='# words written per day',
+            title=f'# words written per day\nE[r] = {mu:,.2f}, E[r != 0] = {munz:,.2f}',
             xlabel='weekday', ylabel='week starting with'
         )
 
