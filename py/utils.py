@@ -9,6 +9,7 @@ import warnings
 
 PathLike = typing.Union[pathlib.Path, str]
 
+
 class DatedDict:
     def __init__(self, data: dict = None):
         self._data = data or dict()
@@ -129,9 +130,11 @@ def get_valid_pdfs(directory: PathLike = '../backups'):
         date = datetime.datetime.strptime(date_str, '%Y-%m-%d')
         yield date, fp
 
+
 def most_recent(directory: PathLike = '../backups'):
     g = list(get_valid_pdfs(directory))
     return sorted(g)[-1]
+
 
 def pattern_remove(text: str, patterns: typing.Iterable) -> str:
     """ Remove all instances of each pattern (which can either be a string
@@ -140,14 +143,17 @@ def pattern_remove(text: str, patterns: typing.Iterable) -> str:
         text = re.sub(p, '', text)
     return text
 
+
 def pairwise(iterable):
     """ s -> (s0, s1), (s1, s2), (s2, s3), ..."""
     u, v = itertools.tee(iterable, 2)
     next(v, None)
     return zip(u, v)
 
+
 def warning_on_one_line(message, category, filename, lineno, file=None, line=None):
     return f'{filename}:{lineno} {category.__name__}:{message}\n'
+
 
 class CTuple(tuple):
     def get(self, key, default=None):
@@ -156,7 +162,8 @@ class CTuple(tuple):
         except IndexError:
             return default
 
-def trans_dataframe(dct: dict, index: str, cols: list) -> pd.DataFrame:
+
+def trans_dataframe(dct: dict, index: str, cols: tuple) -> pd.DataFrame:
     k = list(dct.keys())
     v = [CTuple(val) for val in dct.values()]
     data = {c: [tup.get(j) for tup in v] for j, c in enumerate(cols)}

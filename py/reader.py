@@ -7,15 +7,18 @@ import re
 import typing
 import warnings
 
+import utils
+from utils import PathLike
+
 from tika import parser as tika_parser
 
 with warnings.catch_warnings():
     warnings.simplefilter('ignore')
     from fuzzywuzzy import fuzz
 
-import utils
-from utils import PathLike
+
 warnings.formatwarning = utils.warning_on_one_line
+
 
 @dataclasses.dataclass
 class _ChapterMatch:
@@ -23,12 +26,14 @@ class _ChapterMatch:
     title: str
     text: str
 
+
 @dataclasses.dataclass
 class _FrequencyMatch:
     word: str
     total: int
     proportion: float
     regex: list = dataclasses.field(default_factory=list)
+
 
 class Reader:
     def __init__(self, fp: PathLike):
@@ -48,7 +53,11 @@ class Reader:
         # fix the spacing because there are a LOT of extra line breaks that
         # don't make a lot of sense
         lines = [line.strip() for line in to_parse or self._raw_content.split('\n')]
-        text = '\n'.join(line for line in lines if line)
+        lines = [line for line in lines if line]
+        text = '\n'.join(lines)
+
+        # since I've changed the working title, we'll need to pull it out for each file
+        title = lines[0]
 
         # remove all the footers (emdash page# emdash)
         text = re.sub(r'\u2014 \d+ \u2014', '', text)
@@ -56,7 +65,7 @@ class Reader:
         # I'll need to strip out the headers, but I'm going to use them to find
         # all the chapter titles first. That will make pulling out the actual
         # chapter declarations a lot easier.
-        header = re.compile(r'Princess Drill Chapter (?P<num>\d+) \u2014 (?P<title>.*)')
+        header = re.compile(title + r' Chapter (?P<num>\d+) \u2014 (?P<title>.*)')
         for match in re.finditer(header, text):
             n = int(match.group('num'))
             title = match.group('title')
@@ -191,6 +200,7 @@ def update_counts(fp: PathLike = '../data.json', backups: PathLike = '../backups
     counts.write(fp)
     return counts
 
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-f', '--datafile', type=pathlib.Path, default='../data.json')
@@ -213,6 +223,7 @@ def main():
         cols = 'count', 'proportion'
 
     print(utils.trans_dataframe(res, index='word', cols=cols))
+
 
 if __name__ == '__main__':
     main()
