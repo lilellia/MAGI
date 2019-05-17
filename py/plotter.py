@@ -124,11 +124,10 @@ class Plotter:
         )
 
         # get mean rates
-        mu = arr.flatten().mean()               # mean of all values
-        munz = arr[arr != 0].flatten().mean()     # mean of all nonzero values
+        mu = arr[mask == 0].flatten().mean()               # mean of unmasked values
 
         self.prettify(
-            title=f'# words written per day\nE[r] = {mu:,.2f}, E[r != 0] = {munz:,.2f}',
+            title=f'# words written per day\nE[r] = {mu:,.2f}',
             xlabel='weekday', ylabel='week starting with'
         )
 
