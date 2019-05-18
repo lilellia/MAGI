@@ -1,8 +1,5 @@
-|=============================================================================|
-| Chapter 1                                                                   |
-|-----------------------------------------------------------------------------|
-| The Past Chases the Present                                                 |
-|=============================================================================|
+# Chapter 1
+## The Past Chases the Present
 
 Amara Minori, our narrator and protagonist, wakes up from a nightmare early in the morning. Staring in the mirror, she activates her Maiden transformation before collapsing in grief and anguish. A few hours later, she heads to school, where she's distracted and even more distant than usual. The boy sitting next to her in class, Goya Hideyo, takes note and joins her on the roof for lunch, where she eventually reveals that one year ago, to the day, her best friend, Sono Ikuri, died. Trying to help her put a positive spin on the day, he invites her to the picnic he and his sister, Suzuko, were planning to have after school.
 
@@ -14,10 +11,5 @@ But without time to explain, Minori rushes off to the train station, activating 
 
 After Itou has left, Minori deactivates her transformation and retreats to the train station, deciding on a whim to take a train back to Fujiwara, where she lived before transferring to Kamakura.
 
-|=============================================================================|
-| Chapter 2                                                                   |
-|-----------------------------------------------------------------------------|
-| A New Confidante                                                            |
-|=============================================================================|
-
-
+# Chapter 2
+## A New Confidante
