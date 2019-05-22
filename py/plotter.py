@@ -39,6 +39,8 @@ class Subplot:
 
 class Plotter:
     def __init__(self, counts_fp: PathLike, backups: PathLike):
+        self.counts_fp = counts_fp
+        self.backups = backups
         self.counts = reader.update_counts(counts_fp, backups)
         self.range = min(self.counts.keys()), max(self.counts.keys())
 
@@ -50,7 +52,7 @@ class Plotter:
     @property
     def most_recent(self) -> typing.Tuple[datetime.datetime, reader.Reader]:
         try:
-            date, fp = sorted(utils.get_valid_pdfs())[-1]
+            date, fp = utils.most_recent(self.backups)
             return date, reader.Reader(fp)
         except IndexError as e:
             raise FileNotFoundError('no .pdfs found') from e

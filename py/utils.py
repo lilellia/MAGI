@@ -122,17 +122,15 @@ class DatedDict:
 
 
 def get_valid_pdfs(directory: PathLike = '../backups'):
-    # pattern = re.compile(r'Princess_Drill \(\d\d\d\d-\d\d-\d\d\)')
-    for fp in pathlib.Path(directory).rglob('*.pdf'):
+    for fp in pathlib.Path(directory).resolve().rglob('*.pdf'):
         fp = fp.resolve()
-        # if pattern.match(fp.stem):
         date_str = re.search(r'\d\d\d\d-\d\d-\d\d', fp.stem).group()
         date = datetime.datetime.strptime(date_str, '%Y-%m-%d')
         yield date, fp
 
 
 def most_recent(directory: PathLike = '../backups'):
-    g = list(get_valid_pdfs(directory))
+    g = get_valid_pdfs(directory)
     return sorted(g)[-1]
 
 
