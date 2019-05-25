@@ -60,4 +60,4 @@ def convert_character_files(directory: pathlib.Path):
 
 if __name__ == '__main__':
     compress_backups(pathlib.Path('backups'))
-    convert_character_files(pathlib.Path('Characters'))
+    # convert_character_files(pathlib.Path('Characters'))

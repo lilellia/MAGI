@@ -16,4 +16,17 @@ After Itou has left, Minori deactivates her transformation and retreats to the t
 
 The next morning, Minori, back in Kamakura, goes to Suzuko's classroom looking for her. When she kouhai shows up, Minori asks her to join her on the roof for lunch that day, intending both to determine Suzuko's Maidenship and to (embarrassedly) express Minori's interest in spending more time together.
 
-In her own classroom, she apologizes to Hideyo for running off the day before, giving a technically-true-but-misleading explanation for her departure.
+In her own classroom, she apologizes to Hideyo for running off the day before, giving a technically-true-but-misleading explanation for her departure. At lunch, she rejects Hideyo's offer to join her, insisting that today, she needs the empty space. Before Suzuko arrives on the roof, Minori casts herself back to three years prior, when she first found out that she was a Maiden, reëxperiencing the confusion and uncertainty before she learned the truth about her powers.
+
+When Suzuko arrives, Minori keeps her promise to herself to ask the kouhai to spend more time together before bringing the subject to the important matter at hand, testing Suzuko's sensitivity to the flow of magic. Unsurprisingly, she passes these tests, and after Minori ensures that this will stay a secret between them, she activates her transformation, becoming Snow Leopard and freezing the roof door so that no one can surprise them. Suzuko is understandably confused and frightened as Minori begins explaining that they are both Maidens.
+
+When she learns that her powers are still sealed (and that only other Maidens can unseal them), she asks if Minori will do so, though Minori refuses, saying
+
+> If I unsealed you, I'd have to report it [to the JSDF], and it feels like there's something big starting to happen, so you'd be pressured into fighting for the agency. You don't want that, trust me.
+
+As justification for her decision, Minori explains the hardships she's endured as a member of the JSDF Magical Combat Assist forces: the terrors she's witnessed, the feelings of loss and regret and powerlessness. She says that, after Ikuri's death, she left the JSDF and her magical powers, looking for a normal life, but even then, it caught up to her, and she doesn't feel comfortable putting anyone else through that.
+
+Suzuko, understanding, attempts to console her, promising to do her best to at least give Minori a normal social life with a new friend. She gives Minori a piece of paper with her phone number on it, insisting that they address each other using their first names as Minori's first training exercise.
+
+# Chapter 4
+## 
