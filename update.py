@@ -1,10 +1,12 @@
 #!/usr/bin/python3
 
 import datetime
+import logging
 import pathlib
 import re
 import subprocess
 
+logging.basicConfig(format='%(levelname)s:%(message)s', level=logging.INFO)
 
 def filedate(path: pathlib.Path) -> datetime.datetime:
     date_str = re.search(r'\d\d\d\d-\d\d-\d\d', str(path)).group()
@@ -12,16 +14,22 @@ def filedate(path: pathlib.Path) -> datetime.datetime:
 
 def compress_backups(directory: pathlib.Path):
     gz = directory / 'backups.7z'
+    logging.info(f'Logging backups: {gz}')
 
     # add to archive
     #     $ 7za a <archive name> <filenames ...>
     args = ['7za', 'a', str(gz), str(directory / '*.pdf')]
+    logging.info('Executing: ' + ' '.join(args))
     r = subprocess.run(args, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-    print(r.stderr.decode())
+    
+    err = r.stderr.decode()
+    if err:
+        logging.error(err)
 
     # delete old pdfs from the folder (they'll be kept in the archive though)
     *to_delete, most_recent = sorted(directory.glob('*pdf'), key=filedate) 
     for p in to_delete:
+        logging.info(f'Deleting: {p}')
         p.unlink()
 
 def convert_character_files(directory: pathlib.Path):
