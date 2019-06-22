@@ -12,7 +12,7 @@ Suddenly, she gets a phone call from Itou Haru, her former handler when she work
 
 Minori approaches the station, activating her powers (but not her transformation) on the way. There, Itou [codename: Indigo Wyvern] tells her how his official orders are to ignore the threat, but it's something that neither he nor Minori [codename: Snow Leopard] are willing to ignore. Eventually, she finds the suspect with a backpack full of explosives, temporarily disables them, and detains the suspect until Itou arrives to take him away. He tries to make conversation with her, but it's also clear that he wants her to rejoin the JSDF, which is not something she's currently willing to entertain, and the conversation turns quiet and awkward.
 
-After Itou has left, Minori deactivates her transformation and retreats to the train station, deciding on a whim to take a train back to Fujiwara, where she lived before transferring to Kamakura. There, she wanders the streets before finding herself in front of a flower shop, deciding to buy a bouquet of flowers to take to Ikuri's grave. To her surprise, Ikuri's younger sister, Kaida, is also there, and she invites Minori over for dinner. After Minori has a short conversation with a copy of Ikuri in her head, she goes with Kaida, and the two reconnect after their long separation, eventually promising to maintain closer contact going forward. In particular, Kaida reveals that she's joined her middle school's Choir Club and invites Minori to the competition occurring in the upcoming weeks.
+After Itou has left, Minori deactivates her transformation and retreats to the train station, deciding on a whim to take a train back to Fujiwara, where she lived before transferring to Kamakura. There, she wanders the streets before finding herself in front of a flower shop, deciding to buy a bouquet of flowers to take to Ikuri's grave. To her surprise, Ikuri's younger sister, Kaida, is also there, and she invites Minori over for dinner. After Minori has a short conversation with a copy of Ikuri in her head, she goes with Kaida, and the two reconnect after their long separation, eventually promising to maintain closer contact going forward. In particular, Kaida reveals that she's joined her middle school's Choir Club and invites Minori to the recital occurring in the upcoming weeks.
 
 # Chapter 3
 ## A New Confidante
@@ -29,11 +29,13 @@ When she learns that her powers are still sealed (and that only other Maidens ca
 
 As justification for her decision, Minori explains the hardships she's endured as a member of the JSDF Magical Combat Assist forces: the terrors she's witnessed, the feelings of loss and regret and powerlessness. She says that, after Ikuri's death, she left the JSDF and her magical powers, looking for a normal life, but even then, it caught up to her, and she doesn't feel comfortable putting anyone else through that.
 
-Suzuko, understanding, attempts to console her, promising to do her best to at least give Minori a normal social life with a new friend. She gives Minori a piece of paper with her phone number on it, insisting that they address each other using their first names as Minori's first training exercise.
+Suzuko, understanding, attempts to console her, promising to do her best to at least give Minori a normal social life with a new friend. She gives Minori a piece of paper with her phone number on it, insisting that they address each other using their first names as Minori's first training exercise (though they do maintain their normal honorifics: "Minori-senpai" and "Suzuko-san").
 
 # Chapter 4
 ## ???
 
 The day before Kaida's choir club performance, Minori searches her closet for something to wear to the event. However, she gets distracted by a journal that she used to keep intermittently, with the last two entries being the day of Ikuri's funeral and several days before. Against her instincts, she forces herself to avoid the melancholic rumination the journal is about to bring on.
 
-The next day, she meets Suzuko at Kamakura train station, and they head to Fujisawa.
+The next day, she meets Suzuko at Kamakura train station, and they head to Fujisawa. There, on the way to the school, Minori notices a crowd gathering around a sign near a storefront: an informational poster about the Great Enlightened Kyonshii Order (G.E.K.O.). With "geckos" the only real clue that Itou has uncovered regarding the Kamakura train station incident the week before and with the uniformly devilish stories of the Kyonshii, Minori panickedly informs Itou of her find but declines to act until more information is discovered.
+
+> Do your magic with that information, and then we'll talk about using mine.

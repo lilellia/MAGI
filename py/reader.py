@@ -45,7 +45,7 @@ class Reader:
 
     @property
     def date(self) -> datetime.datetime:
-        s = re.match(r'Princess_Drill (.*)', str(self._fp.stem)).group(1)
+        s = re.match(r'[A-Za-z_]+ (.*)', str(self._fp.stem)).group(1)
         return datetime.datetime.strptime(s, '(%Y-%m-%d)')
 
     def _parse(self, *, to_parse: str = None):
