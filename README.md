@@ -32,10 +32,18 @@ As justification for her decision, Minori explains the hardships she's endured a
 Suzuko, understanding, attempts to console her, promising to do her best to at least give Minori a normal social life with a new friend. She gives Minori a piece of paper with her phone number on it, insisting that they address each other using their first names as Minori's first training exercise (though they do maintain their normal honorifics: "Minori-senpai" and "Suzuko-san").
 
 # Chapter 4
-## ???
+## A More Well-Planned Visit
 
 The day before Kaida's choir club performance, Minori searches her closet for something to wear to the event. However, she gets distracted by a journal that she used to keep intermittently, with the last two entries being the day of Ikuri's funeral and several days before. Against her instincts, she forces herself to avoid the melancholic rumination the journal is about to bring on.
 
 The next day, she meets Suzuko at Kamakura train station, and they head to Fujisawa. There, on the way to the school, Minori notices a crowd gathering around a sign near a storefront: an informational poster about the Great Enlightened Kyonshii Order (G.E.K.O.). With "geckos" the only real clue that Itou has uncovered regarding the Kamakura train station incident the week before and with the uniformly devilish stories of the Kyonshii, Minori panickedly informs Itou of her find but declines to act until more information is discovered.
 
 > Do your magic with that information, and then we'll talk about using mine.
+
+Once the two girls resume their walk toward the school, Minori explains the situation to Suzuko, who seems disappointed that the older student isn't going to do anything now that she knows about G.E.K.O. and once again offers her service as a Maiden, though Minori shuts her down again.
+
+> MINORI: "You don't want to be involved. It's not all rainbows and sunshine."
+> SUZUKO, *inaudible*: "Well, neither are you."
+
+The conversation regains a tenseness until the girls are waiting in the middle school's auditorium, where Suzuko asks Minori if she has any summer break plans. When she says no, Suzuko invites her to travel parts of western Japan with her since Hideyo won't go with her. Minori accepts.
+
