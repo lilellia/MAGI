@@ -32,6 +32,12 @@ $$\vdots$$
 
 $$\vdots$$
 
+## 7:16:13 (2002)
+
+- Pelio 14 (.184): Calleni Rena is born
+
+$$\vdots$$
+
 ## 7:17:5 (2007)
 
 - Neyu 06 (.312): Ari and Natalia graduate high school at age 17

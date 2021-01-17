@@ -5,7 +5,7 @@
 - **Name:** Amara Minori
 - **Nickname(s):**
   - Snow Leopard (CIA codename)
-  - Mino-chi (by Calleni Rena and, later, Molva Iselle)
+  - Mino-chi (by Calleni Nia/Rena and, later, Molva Iselle)
 - **Race:** Human (Maiden)
 - **Gender:** Female
 - **Birthday:** 7:16:9 Tiri 06 (aged 16)
