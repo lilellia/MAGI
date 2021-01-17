@@ -58,10 +58,15 @@ Description of appearance, including outfit(s).
 
 As a Maiden, her quick reflexes and decision-making allow her to specialize in rapid-fire attacks that are meant to overwhelm the enemy without providing them an opening to take advantage of. Her ultimate skill is *Dischronos*, a time-dilation spell that enables her to change the pace of time around her, giving her even more perceived speed. She likes to attack from multiple angles with well-placed ranged spells to fence in her opponents before rushing in while they are flustered and overwhelmed. As such, she struggles against targets who don’t fear her and those who remain composed during the fight, as well as against large groups of enemies.
 
-| Spell Name | Element | Mana Consumption | Effect                                 |
-| ---------: | ------: | ---------------: | -------------------------------------- |
-|        ... |       — |                — | activate her powers and transformation |
-|        ... |     ... |              ... | ...                                    |
+### Known Spells
+
+- *Spell name*
+
+  effect
+
+- *Spell name*
+
+  effect
 
 ## Relationships
 

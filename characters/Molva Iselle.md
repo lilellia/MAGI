@@ -26,16 +26,15 @@ She is motivated by honor, loyalty, and friendship, and she is drawn to Minori�
 
 ## Appearance
 
-|    Height |  Weight |                  B/W/H |
-| --------: | ------: | ---------------------: |
-| 156 cm | 47 kg | B\#\# W\#\# H\#\# (cm) |
+| Height | Weight |                  B/W/H |
+| -----: | -----: | ---------------------: |
+| 156 cm |  47 kg | B\#\# W\#\# H\#\# (cm) |
 
 &nbsp;
 
-|                          Hair |  Eyes |
-| ----------------------------: | ----: |
-|                 blue-green, shoulder-length | silver |
-|  |       |
+|                        Hair |   Eyes |
+| --------------------------: | -----: |
+| blue-green, shoulder-length | silver |
 
 &nbsp;
 
@@ -45,31 +44,32 @@ Her magical Gown consists of a translucent teal-blue dress atop a strapless band
 
 ## Maiden Abilities
 
-|             Weapon |    Keystone |
-| -----------------: | ----------: |
+|                Weapon |                                                 Keystone |
+| --------------------: | -------------------------------------------------------: |
 | ??? (a magical staff) | silver butterfly pendant necklace with amethyst gemstone |
-| ??? (a small dagger) | |
+|  ??? (a small dagger) |                                                          |
 
 &nbsp;
 
-| Specialty | Element |       Signature Skill |
-| --------: | ------: | -------------------: |
-|  Support  | Water | *Echoes* (MGK++, MRegen+) |
+| Specialty | Element |           Signature Skill |
+| --------: | ------: | ------------------------: |
+|   Support |   Water | *Echoes* (MGK++, MRegen+) |
 
 &nbsp;
 
 |   HP |  ATK |  DEF |  MGK |  RES |  SPE | RANK |
 | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
-|    B |    C+ |    B- |    A- |    A |    B |    B+ |
+|    B |   C+ |   B- |   A- |    A |    B |   B+ |
 
 &nbsp;
 
 As a Maiden, she specializes in support (ally buff/enemy debuff) and healing, preferring to attack from a distance. She struggles in close-range/melee combat, though she can use her staff as a makeshift shield against some attacks, and she carries a small dagger in the left boot of her Gown. Though she specializes in support, she also possesses relatively strong offensive magic as well, though it exhausts her comparatively quickly.
 
-| Spell Name | Element | Mana Consumption | Effect                                 |
-| ---------: | ------: | ---------------: | -------------------------------------- |
-|        ... |       — |                — | activate her powers and transformation |
-|  Echoes  |  Water  |  low-moderate | boost the magical strength and rate of mana regeneration for herself or a nearby ally |
+### Known Spells
+
+- *Echoes*
+  
+  boost the magical strength and rate of mana regeneration for herself or a nearby ally
 
 ## Relationships
 

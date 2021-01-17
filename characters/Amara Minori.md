@@ -16,8 +16,9 @@
   - Former:
     - Clerèssian Intelligence Agency, Magical Combat Assist Unit (member)
     - Siel High School
+    - Siel Middle School
 
-
+&nbsp;
 
 Calm and collected, Minori tends to keep to herself, though she is personable (if aloof) around others. Her aloofness is, however, a coping mechanism: she fears connecting deeply with people around her because she has experienced the tragic and painful loss of a friend in the past. As she sees it, she can’t be hurt again in the same way if she never forms meaningful friendships.
 
@@ -64,12 +65,24 @@ Her magical Gown is a skin-tight and flexible silver armor that covers her entir
 
 As a Maiden, her quick reflexes and decision-making allow her to specialize in rapid-fire attacks that are meant to overwhelm the enemy without providing them an opening to take advantage of. Her signature skill is *Dischronos*, a time-dilation spell that enables her to change the pace of time around her, giving her even more perceived speed. She likes to attack from multiple angles with well-placed ranged spells to fence in her opponents before rushing in while they are flustered and overwhelmed. As such, she struggles against targets who don’t fear her and those who remain composed during the fight, as well as against large groups of enemies.
 
-| Spell Name | Element | Mana Consumption | Effect |
-| ---: | ---: | ---: | ---: |
-| O, Requiem! | — | — | activate her powers and transformation |
-| Khione | Ice | very low | release a stream of icy energy from her palm |
-| Alsýon | Ice | low | create a transparent ward of ice around her that blocks all sound from entering or escaping
-| Dischronos | Ice | high | in a small sphere of influence around her, change the relative passage of time; most often used to slow down her own time, giving her a perceived burst of speed
+### Known Spells
+
+- *O, Requiem*
+
+  activate her powers and transformation
+
+- *Khione*
+
+  release a stream of icy energy from her palm
+
+- *Alsýon*
+
+  create a transparent ward of ice around her that blocks all sound from entering or escaping
+
+- *Dischronos*
+
+  in a small sphere of influence around her, change the relative passage of time; most commonly used to slow down her own time, giving her a perceived burst of speed
+
 
 ## Relationships
 
