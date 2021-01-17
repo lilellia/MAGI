@@ -1,6 +1,9 @@
 # TODO: Implement .strptime, __add__, and __sub__ #
 
+__all__ = ['Month', 'CleressianDate']
+
 import collections
+import enum
 import math
 import re
 
@@ -8,20 +11,20 @@ import re
 _AbsoluteDate = collections.namedtuple('AbsoluteDate', ('year', 'day'))
 
 
-class CleressianDate:
-    MONTH_NAMES = {
-        1: 'Sirelle',
-        2: 'Tiri',
-        3: 'Enna',
-        4: 'Fis',
-        5: 'Neyu',
-        6: 'Pelio',
-        7: 'Kria',
-        8: 'Sui',
-        9: 'Brilia',
-        10: 'Klesni'  # the intercalendary days
-    }
+class Month(enum.Enum):
+    SIRELLE = 1
+    TIRI = 2
+    ENNA = 3
+    FIS = 4
+    KLESNI = 5
+    PELIO = 6
+    KRIA = 7
+    SUI = 8
+    BRILIA = 9
+    NEYU = 10
 
+
+class CleressianDate:
     def __init__(self, grand_cycle: int, cycle: int, year: int, month: int = 1, day: int = 1):
         """ Create a new Clerèssian Date.
 
@@ -53,6 +56,9 @@ class CleressianDate:
 
         if not (1 <= year <= 13):
             raise ValueError(f'year must be on ℤ[1, 13], not {year!r}')
+
+        if isinstance(month, Month):
+            month = month.value
 
         if not (1 <= month <= 10):
             raise ValueError(f'month must be on ℤ[1, 10], not {month!r}')
@@ -108,7 +114,7 @@ class CleressianDate:
         return False
 
     @classmethod
-    def from_absolute_date(cls, year: int, day: int):
+    def from_absolute_date(cls, year: int, day: int = 1):
         """ Create a CleressianDate from a total number of years and days.
 
         Parameters:
@@ -142,7 +148,7 @@ class CleressianDate:
 
     @property
     def month_name(self) -> str:
-        return self.MONTH_NAMES[self.month]
+        return Month(self.month).name.title()
 
     def __format__(self, fmt: str) -> str:
         """
@@ -176,8 +182,11 @@ class CleressianDate:
         %Y      absolute year as a zero-padded decimal number, where GC01:C01:Y01 => 0001.**
                 (0001, 0002, ..., 9998, 9999)
 
-        %X      locale's appropriate time representation*
+        %x      appropriate date representation*
                 shorthand for: %g:%c:%y %B %d
+
+        %X      absolute date representation**
+                shorthand for: %04Y.%03j
 
         %%      a literal % character*
                 (%)
@@ -189,7 +198,7 @@ class CleressianDate:
             %Y  Year with century as decimal number (0001, 0002, ..., 2013, 2014, ..., 9998, 9999)
         """
 
-        fmt = fmt.replace('%X', '%g:%c:%y %B %d')
+        fmt = fmt.replace('%x', '%g:%c:%y %B %d').replace('%X', '%04Y.%03j')
 
         num_codes = {
             'g': self.grand_cycle,
@@ -210,10 +219,10 @@ class CleressianDate:
 
         nonnum_codes = {
             # month as locale's abbreviated name
-            '%b': self.MONTH_NAMES[self.month][:3],
+            '%b': self.month_name[:3],
 
             # month as locale's full name
-            '%B': self.MONTH_NAMES[self.month],
+            '%B': self.month_name,
 
             # literal % character
             '%%': '%'
@@ -224,7 +233,7 @@ class CleressianDate:
 
         return fmt
 
-    def strftime(self, fmt: str = '%X') -> str:
+    def strftime(self, fmt: str = '%x') -> str:
         return format(self, fmt)
 
     @classmethod
@@ -232,7 +241,7 @@ class CleressianDate:
         raise NotImplementedError()
 
     def __str__(self) -> str:
-        return self.__format__('%X')
+        return self.__format__('%x')
 
     def __repr__(self) -> str:
         cls = self.__class__.__name__
