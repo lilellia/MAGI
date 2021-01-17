@@ -1,35 +1,42 @@
-# Chapter 1
-## The Past Chases the Present
+# MAGI
 
-Amara Minori, our narrator and protagonist, wakes up from a nightmare early in the morning. Staring in the mirror, she activates her Maiden transformation before collapsing in grief and anguish. A few hours later, she heads to school, where she's distracted and even more distant than usual. The boy sitting next to her in class, Goya Hideyo, takes note and joins her on the roof for lunch, where she eventually reveals that one year ago, to the day, her best friend, Sono Ikuri, died. Trying to help her put a positive spin on the day, he invites her to the picnic he and his sister, Suzuko, were planning to have after school.
+## I: The Past Chases the Present
 
-By the time school ends, she has decided to go with them, meeting Suzuko in her classroom for the first time. Because Minori is such an enigma, having transferred to their school and having never spoken about her past, Suzuko decides to ask about it and, to their surprise, she decides to answer, revealing that Ikuri was killed in a terrorist attack one year ago only minutes after she and Minori had parted ways.
+Amara Minori, our narrator and protagonist, wakes up from a nightmare early in the morning. Staring in the mirror, she activates her Maiden transformation before collapsing in grief and anguish. A few hours later, she heads to school, where she's distracted and even more distant than usual. The boy sitting next to her in class, Molva Atris, takes note and joins her on the school for lunch, where she eventually reveals that one year ago, to the day, her best friend, Calleni Nia, died. Trying to help her put a positive spin on the day, he invites her to the picnic that he and his younger sister, Iselle, are planning to have after school.
 
-Suddenly, she gets a phone call from Itou Haru, her former handler when she worked as in magical combat assist for the JSDF. Itou informs her of a planned terrorist attack at the train station near her in less than one hour, insisting that she is the only one who can possibly stop it from happening. As her emotions (and magical power) flow through her, some of that power flows through her necklace that Suzuko is holding. To both girls' surprise, Suzuko can sense this power, even though she can't identify it. But without time to explain, Minori rushes off to the train station.
+By the time the school day ends, she has decided to go with them, meeting Iselle in her classroom for the first time before they leave for the picnic. Because Minori is such an enigma, having transferred to their school and having never spoken about her past, Iselle decides to ask about it and, to their surprise, Minori decides to answer, revealing that Nia was killed in a terrorist attack only minutes after the two had parted ways.
 
-# Chapter 2
-## Same, Yet Different
+Suddenly, she gets a phone call from Kaskei Ari, her former handler from when she worked for the military's Magical Combat Assist unit. Ari informs her of a planned attack at the train station near her in just over half an hour, insisting that she is the only one he trusts to stop it from happening. As her emotions (and magical power) flow through her, the power also flows through her keystone necklace that Iselle is holding. To both girls' surprise, Iselle can sense this power, though she can't identify it. But without time to explain, Minori rushes off to the train station.
 
-Minori approaches the station, activating her powers (but not her transformation) on the way. There, Itou [codename: Indigo Wyvern] tells her how his official orders are to ignore the threat, but it's something that neither he nor Minori [codename: Snow Leopard] are willing to ignore. Eventually, she finds the suspect with a backpack full of explosives, temporarily disables them, and detains the suspect until Itou arrives to take him away. He tries to make conversation with her, but it's also clear that he wants her to rejoin the JSDF, which is not something she's currently willing to entertain, and the conversation turns quiet and awkward.
+## II: Same, Yet Different
 
-After Itou has left, Minori deactivates her transformation and retreats to the train station, deciding on a whim to take a train back to Fujiwara, where she lived before transferring to Kamakura. There, she wanders the streets before finding herself in front of a flower shop, deciding to buy a bouquet of flowers to take to Ikuri's grave. To her surprise, Ikuri's younger sister, Kaida, is also there, and she invites Minori over for dinner. After Minori has a short conversation with a copy of Ikuri in her head, she goes with Kaida, and the two reconnect after their long separation, eventually promising to maintain closer contact going forward. In particular, Kaida reveals that she's joined her middle school's Choir Club and invites Minori to the recital occurring in the upcoming weeks.
+Minori approaches the station, activating her powers (but not her transformation) as she nears it. There, Ari tells her how his official orders are to ignore the threat, but it's something that neither he nor Minori are willing to ignore. Eventually, she finds the suspect with a backpack full of explosives, temporarily disables them, and detains the suspect until Ari arrives to take him away. He tries to make conversation with her, but she can see through to his implied desire for her to rejoin the unit and her subsequent coldness turns the conversation quiet and awkward, though she agrees to be kept up to date on his investigation.
 
-# Chapter 3
-## A New Confidante
+After Ari has left, Minori releases her powers and returns to the train station, having decided on a whim to return back to Siel, where she lived before transferring to Irèle. There, she wanders the streets before finding herself in front of a flower shop, deciding to buy a bouquet of flowers to take to Nia's grave. To her surprise, Nia's younger sister, Rena, is also at the cemetery, and she invites Minori over for dinner. After Minori's short conversation with a copy of Nia in her head, she goes with Rena, and the two reconnect after their long separation, eventually promising to maintain closer contact going forward. In particular, Rena reveals that she's joined her middle school's choir club and invites Minori to the upcoming recital.
 
-The next morning, Minori, back in Kamakura, goes to Suzuko's classroom looking for her. When she kouhai shows up, Minori asks her to join her on the roof for lunch that day, intending both to determine Suzuko's Maidenship and to (embarrassedly) express Minori's interest in spending more time together.
+## III: A New Confidante
 
-In her own classroom, she apologizes to Hideyo for running off the day before, giving a technically-true-but-misleading explanation for her departure. At lunch, she rejects Hideyo's offer to join her, insisting that today, she needs the empty space. Before Suzuko arrives on the roof, Minori casts herself back to three years prior, when she first found out that she was a Maiden, reëxperiencing the confusion and uncertainty before she learned the truth about her powers.
+The next morning, Minori (back in Irèle) goes to Iselle's classroom looking for her. When the younger student shows up, Minori asks her to join her on the roof for lunch that day, intending to both determine Iselle's Maidenship and to (embarrassedly) express her interest in spending more time together. Iselle agrees.
 
-When Suzuko arrives, Minori keeps her promise to herself to ask the kouhai to spend more time together before bringing the subject to the important matter at hand, testing Suzuko's sensitivity to the flow of magic. Unsurprisingly, she passes these tests, and after Minori ensures that this will stay a secret between them, she activates her transformation, becoming Snow Leopard and freezing the roof door so that no one can surprise them. Suzuko is understandably confused and frightened as Minori begins explaining that they are both Maidens.
+In her own classroom, she apologizes to Atris for running off the day before, giving a technically-true-but-misleading explanation for her departure. At lunch, she rejects his offer to join her, insisting that today, she needs the empty space. Before Iselle arrives on the roof, Minori is cast back to four years prior, when she first found out that she was a Maiden, reexperiencing the confusion and uncertainty before she learned the truth about her powers.
 
-When she learns that her powers are still sealed (and that only other Maidens can unseal them), she asks if Minori will do so, though Minori refuses, saying
+When Iselle arrives, Minori keeps her promise to herself to ask the younger student to spend more time together before bringing the subject to the important matter at hand, testing Suzuko's sensitivity to the flow of magic, which only other Maidens can passively detect. Unsurprisingly, she passes these tests, and after Minori ensures that this will stay a secret between them, she activates her full transformation, casting a soundproof ward around them. Iselle is understandably confused and frightened as Minori begins explaining that they are both Maidens.
 
-> If I unsealed you, I'd have to report it [to the JSDF], and it feels like there's something big starting to happen, so you'd be pressured into fighting for the agency. You don't want that, trust me.
+When she learns that her powers are still sealed (and only other Maidens can unseal them), she asks if Minori will do so, though Minori refuses, saying
 
-As justification for her decision, Minori explains the hardships she's endured as a member of the JSDF Magical Combat Assist forces: the terrors she's witnessed, the feelings of loss and regret and powerlessness. She says that, after Ikuri's death, she left the JSDF and her magical powers, looking for a normal life, but even then, it caught up to her, and she doesn't feel comfortable putting anyone else through that.
+> I could. I'm not going to, though. At least, not yet. [...] If I were to unseal you, I'd have to report it, and it feels like there's something big starting to happen, especially around the agency. Don't know what, yet, but you'd end up dragged into the ensuing whirlwind, and you don't want that, trust me.
 
-Suzuko, understanding, attempts to console her, promising to do her best to at least give Minori a normal social life with a new friend. She gives Minori a piece of paper with her phone number on it, insisting that they address each other using their first names as Minori's first training exercise (though they do maintain their normal honorifics: "Minori-senpai" and "Suzuko-san").
+As justification for this decision, Minori cites the hardships she's endured as a member of the MCA forces and says that after Nia's death, she left the MCA and her magical powers, looking for a normal life, but even then, it caught up to her, and she doesn't feel comfortable putting anyone else through that.
+
+Iselle, somewhat understanding, attempts to console her, promising to do her best to at least give Minori a more normal social life with a new friend. She gives her a piece of paper with her phone number on it, insisting that they address each other using their first names as Minori's first training exercise (though they do maintain their normal honorifics).
+
+## IV: In Concert
+
+## V: A New Era
+
+## VI: Language of the Fae
+
+<!--
 
 # Chapter 4
 ## A More Well-Planned Visit
@@ -46,4 +53,4 @@ Once the two girls resume their walk toward the school, Minori explains the situ
 > SUZUKO, *inaudible*: "Well, neither are you."
 
 The conversation regains a tenseness until the girls are waiting in the middle school's auditorium, where Suzuko asks Minori if she has any summer break plans. When she says no, Suzuko invites her to travel parts of western Japan with her since Hideyo won't go with her. Minori accepts.
-
+ -->
