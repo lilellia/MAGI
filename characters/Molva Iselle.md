@@ -97,7 +97,7 @@ No specific information is known about her parents or other family beyond what c
 
 ## Trivia
 
-- Her last name comes from the Russian word <ruby><rb>королева</rb><rt>*koroleva*</rt></ruby>, meaning "queen". She controls water magic, so there is a loose association chain between water → rain → reign (homophone) → queen. Her given name, Iselle, is of unknown origin [(source)](https://nameberry.com/babyname/Iselle) but could be related to names such as Isabelle.
+- Her last name comes from the Russian word <ruby><rb>королева</rb><rt style="font-size: 75%;">*koroleva*</rt></ruby>, meaning "queen". She controls water magic, so there is a loose association chain between water → rain → reign (homophone) → queen. Her given name, Iselle, is of unknown origin [(source)](https://nameberry.com/babyname/Iselle) but could be related to names such as Isabelle.
   - Her given name resembles that of Isolde Ennets, deuteragonist of *Elena*, another of Lily Ellington's books. In particular, they are both deuteragonists who share the nickname *Isa*. That Iselle's last name is a corruption of "queen" is also a reference to Isolde being a princess of her home nation of Incerin.
 - Character appearance references:
   - Her general appearance is inspired by [this recolored image](./references/molva-iselle-01.png) of Etou Kanami from the anime *Toji no Miko* — [(original image)](https://rei.animecharactersdatabase.com/uploads/chars/thumbs/200/42795-1277625042.jpg).

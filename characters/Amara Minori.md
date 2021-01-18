@@ -115,9 +115,9 @@ Iselle forms the center of Minori's new social presence, taking the position as 
 
 ## Trivia
 
-- Her name comes from the Japanese names <ruby><rb>天</rb><rt>あま</rt><rb>良</rb><rt>ら</rt></ruby> (*ama*: sky, heaven + *ra*: good, virtuous) and <ruby><rb>穣</rb><rt>みのり</rt></ruby> (*minori*: abundant; often written in hiragana).
+- Her name comes from the Japanese names <ruby><rb>天</rb><rt style="font-size: 75%;">あま</rt><rb>良</rb><rt style="font-size: 75%;">ら</rt></ruby> (*ama*: sky, heaven + *ra*: good, virtuous) and <ruby><rb>穣</rb><rt style="font-size: 75%;">みのり</rt></ruby> (*minori*: abundant; often written in hiragana).
 - Origin of spell names:
-  - *Khione* (also spelled "Chione", from Greek <ruby><rb>χιών</rb><rt>*chión*</rt></ruby> "snow") was a Greek goddess of the north wind, which brought the winter coldness.
+  - *Khione* (also spelled "Chione", from Greek <ruby><rb>χιών</rb><rt style="font-size: 75%;">*chión*</rt></ruby> "snow") was a Greek goddess of the north wind, which brought the winter coldness.
   - *Alsýon*: From the English *halcyon* < ME *alceon* < L *halcyon* < Gk *alkyōn*: calm, peaceful.
     > According to Greek mythology, Alkyone, the daughter of the god of the winds, became so distraught when she learned that her husband had been killed in a shipwreck that she threw herself into the sea and was changed into a kingfisher. As a result, ancient Greeks called such birds *alkyon* or *halkyon*. The legend also says that such birds built floating nests on the sea, where they so charmed the wind god that he created a period of unusual calm that lasted until the birds' eggs hatched. This legend prompted people to use *halcyon* both as a noun naming a genus of kingfisher and as an adjective meaning either "of or relating to the kingfisher or its nesting period" or calm. [(Source)](https://www.merriam-webster.com/dictionary/halcyon)
 

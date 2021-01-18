@@ -46,5 +46,5 @@ One of Amara Minori's classmates, he is the middle brother between [Iselle](./Mo
 
 ## Trivia
 
-- His last name comes from the Russian word <ruby><rb>королева</rb><rt>*koroleva*</rt></ruby>, meaning "queen" and is, accordingly, more befitting his sisters.
+- His last name comes from the Russian word <ruby><rb>королева</rb><rt style="font-size: 75%;">*koroleva*</rt></ruby>, meaning "queen" and is, accordingly, more befitting his sisters.
 - His first name, *Atris*, is a loose reference to the name *Tristan* from the legend *Tristan and Iseult*. The name *Tristan* derives from any of Welsh *trist*, French *triste*, and Latin *tristis*, all meaning "sad" or "sorrowful"; Atris's name begins with the Greek negation particle *a-* to counteract this. Though their relationship is in no way romantic, this reference reflects the closeness between Atris and his younger sister, Iselle (whose name resembles *Iseult*).

@@ -52,4 +52,4 @@ Having graduated from a prestigious college and attained a position as an assist
 
 ## Trivia
 
-- Her last name comes from the Russian word <ruby><rb>королева</rb><rt>*koroleva*</rt></ruby>, meaning "queen". Though the name is a chained reference for Iselle, it can also be seen to apply to Natalia in reference to her general success, status, and condescending nature.
+- Her last name comes from the Russian word <ruby><rb>королева</rb><rt style="font-size: 75%;">*koroleva*</rt></ruby>, meaning "queen". Though the name is a chained reference for Iselle, it can also be seen to apply to Natalia in reference to her general success, status, and condescending nature.
