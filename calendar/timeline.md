@@ -5,20 +5,20 @@
 - Sirelle 01 (.001): Clerèssian monarchy abolished
 
 
-$$\vdots$$
+&nbsp;
 
 ## 7:15:12 (1988)
 
 - Sirelle 08 (.008): Kaskei Ari is born
 - Fis 19 (.121): Molva Natalia is born
 
-$$\vdots$$
+&nbsp;
 
 ## 7:16:5 (1994)
 
 - Kria 01 (.205): Miú Aya is born
 
-$$\vdots$$
+&nbsp;
 
 ## 7:16:9 (1998)
 
@@ -30,13 +30,13 @@ $$\vdots$$
 
 - Brilia 09 (.281): Molva Iselle is born
 
-$$\vdots$$
+&nbsp;
 
 ## 7:16:13 (2002)
 
 - Pelio 14 (.184): Calleni Rena is born
 
-$$\vdots$$
+&nbsp;
 
 ## 7:17:5 (2007)
 

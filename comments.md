@@ -26,12 +26,16 @@
 
 ## VI: Language of the Fae
 
+- In the unsealing spell, Minori makes reference to the Maidens as "daughters of the Fae" and as "sisters" (of each other). While there is a connection between the Maidens and the Fae, it's not familial. These terms, here, are purely terms of societal kinship or fellowship; compare to *sisters of a convent*.
+
+    > "I call out to you," I say in the Faen language, imbuing the language with my magic, "<span style="text-decoration: underline;">fellow daughter of the Fae</span>. I promise to be your protector, just as we, together, are the protectors of the world. Release this seal and accept your destiny!" I soften my gaze, taking her other hand in mine with a smile. "We welcome you, <span style="text-decoration: underline;">sister Iselle</span>."
+
 - There might be a better transcription, but the "Nn" is meant here as a sound of disagreement, reminiscient of the Japanese <ruby><rb>ううん</rb><rt style="font-size: 75%;">*uun*</rt></ruby>, as [here](https://www.google.com/url?q=https://www.crunchyroll.com/puella-magi-madoka-magica/episode-12-my-very-best-friend-591757):
 
     @10:37: &nbsp; <ruby><rb>まどか</rb><rt style="font-size: 75%;">MADOKA:</rt>　「<rb style="text-decoration: underline;">ううん</rb><rt style="font-size: 75%;">*uun,*</rt>、<rb>違う</rb><rt style="font-size: 75%;">*chigau*</rt><rb>よ。</rb><rt style="font-size: 75%;">*yo,*</rt><rb>ほむらちゃん</rb><rt style="font-size: 75%;">*Homura-chan.*</rt>」</ruby>
 
     @12:27: &nbsp; <ruby><rb>まどか</rb><rt style="font-size: 75%;">MADOKA:</rt>　「<rb style="text-decoration: underline;">つうん</rb><rt style="font-size: 75%;">*uun,*</rt>、<rb>諦める</rb><rt style="font-size: 75%;">*akirumeru*</rt><rb>の</rb><rt style="font-size: 75%;">*no*</rt><rb>は</rb><rt style="font-size: 75%;">*wa,*</rt>、<rb>まだ</rb><rt style="font-size: 75%;">*mada*</rt><rb>早い</rb><rt style="font-size: 75%;">*hayai*</rt><rb>よ</rb><rt style="font-size: 75%;">*yo.*</rt>」</ruby>
 
-    > Fortunately, I'm braced for the blast of power that erupts from her as her seal is broken. A shiver passes over me as the magic emanates throughout the room. I wonder if she can also feel the comparatively calm, gentle energy flowing from where my hand meets hers on the glass. "*Charistí, Neyu*," I whisper in thanks.
-    > 
-    > *<span style="text-decoration: underline;">Nn.</span> Thank you, Minori*, I hear the response in my head, in affected Clerèssian.
+    > Fortunately, I'm braced for the blast of power that erupts from her as her seal is broken. A shiver passes over me as the magic emanates throughout the room. I wonder if she can also feel the comparatively calm, gentle energy flowing from where our hands meet on the glass. "*Charistí, Neyu-ryo*," I whisper in thanks.
+    >
+    > *Nn.* I hear her modest dismissal in my head, in affected Clerèssian. *Thank you, Minori.*

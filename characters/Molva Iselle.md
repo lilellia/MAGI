@@ -4,6 +4,7 @@
 
 - **Name:** Molva Iselle
 - **Nickname(s):**
+  - Blue Otter (MCA codename)
   - Isa (by Molva Atris)
   - Isa-chi (by Amara Minori)
 - **Race:** Human (Maiden)
@@ -99,6 +100,7 @@ No specific information is known about her parents or other family beyond what c
 
 - Her last name comes from the Russian word <ruby><rb>королева</rb><rt style="font-size: 75%;">*koroleva*</rt></ruby>, meaning "queen". She controls water magic, so there is a loose association chain between water → rain → reign (homophone) → queen. Her given name, Iselle, is of unknown origin [(source)](https://nameberry.com/babyname/Iselle) but could be related to names such as Isabelle.
   - Her given name resembles that of Isolde Ennets, deuteragonist of *Elena*, another of Lily Ellington's books. In particular, they are both deuteragonists who share the nickname *Isa*. That Iselle's last name is a corruption of "queen" is also a reference to Isolde being a princess of her home nation of Incerin.
+- Her favorite animal is the otter, a fact alluded to by her MCA/Team MAGI codename.
 - Character appearance references:
   - Her general appearance is inspired by [this recolored image](./references/molva-iselle-01.png) of Etou Kanami from the anime *Toji no Miko* — [(original image)](https://rei.animecharactersdatabase.com/uploads/chars/thumbs/200/42795-1277625042.jpg).
   - Her Gown is inspired by [this dress](./references/molva-iselle-02.jpg), sold [here](https://flashyouandme.com/product/deep-water-mesh-babydoll-dress-with-deep-decollette/). Obviously, that's a lot more translucent than Iselle could wear on its own (which bespeaks its existence as lingerie), so she has a white bandeau bra and a pair of white spandex shorts that come a few centimeters short of the hem of the skirt, which itself reaches just past her mid-thigh (a bit longer than the reference image's). In addition, the skirt is "streaked withh lighter blues and whites", similar to the train of Elsa's ice dress in *Frozen*, though done as streaks of color rather than snowflake patterns.

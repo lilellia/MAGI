@@ -1,6 +1,26 @@
 # MAGI
 
-## I: The Past Chases the Present
+![](./continental_map.png)
+
+## Navigation
+
+### Calendar
+
+- [Timeline](./calendar/timeline.md)
+- [Calendar Info](./calendar/info.md)
+- [`cleressian_date` module](./calendar/cleressian_date.py)
+
+### Characters
+
+- [Amara Minori](./characters/Amara%20Minori.md)
+- [Calleni Rena](./characters/Calleni%20Rena.md)
+- [Molva Atris](./characters/Molva%20Atris.md)
+- [Molva Iselle](./characters/Molva%20Iselle.md)
+- [Molva Natalia](./characters/Molva%20Natalia.md)
+
+## Summary
+
+### I: The Past Chases the Present
 
 Amara Minori, our narrator and protagonist, wakes up from a nightmare early in the morning. Staring in the mirror, she activates her Maiden transformation before collapsing in grief and anguish. A few hours later, she heads to school, where she's distracted and even more distant than usual. The boy sitting next to her in class, Molva Atris, takes note and joins her on the school for lunch, where she eventually reveals that one year ago, to the day, her best friend, Calleni Nia, died. Trying to help her put a positive spin on the day, he invites her to the picnic that he and his younger sister, Iselle, are planning to have after school.
 
@@ -8,13 +28,13 @@ By the time the school day ends, she has decided to go with them, meeting Iselle
 
 Suddenly, she gets a phone call from Kaskei Ari, her former handler from when she worked for the military's Magical Combat Assist unit. Ari informs her of a planned attack at the train station near her in just over half an hour, insisting that she is the only one he trusts to stop it from happening. As her emotions (and magical power) flow through her, the power also flows through her keystone necklace that Iselle is holding. To both girls' surprise, Iselle can sense this power, though she can't identify it. But without time to explain, Minori rushes off to the train station.
 
-## II: Same, Yet Different
+### II: Same, Yet Different
 
 Minori approaches the station, activating her powers (but not her transformation) as she nears it. There, Ari tells her how his official orders are to ignore the threat, but it's something that neither he nor Minori are willing to ignore. Eventually, she finds the suspect with a backpack full of explosives, temporarily disables them, and detains the suspect until Ari arrives to take him away. He tries to make conversation with her, but she can see through to his implied desire for her to rejoin the unit and her subsequent coldness turns the conversation quiet and awkward, though she agrees to be kept up to date on his investigation.
 
 After Ari has left, Minori releases her powers and returns to the train station, having decided on a whim to return back to Siel, where she lived before transferring to Irèle. There, she wanders the streets before finding herself in front of a flower shop, deciding to buy a bouquet of flowers to take to Nia's grave. To her surprise, Nia's younger sister, Rena, is also at the cemetery, and she invites Minori over for dinner. After Minori's short conversation with a copy of Nia in her head, she goes with Rena, and the two reconnect after their long separation, eventually promising to maintain closer contact going forward. In particular, Rena reveals that she's joined her middle school's choir club and invites Minori to the upcoming recital.
 
-## III: A New Confidante
+### III: A New Confidante
 
 The next morning, Minori (back in Irèle) goes to Iselle's classroom looking for her. When the younger student shows up, Minori asks her to join her on the roof for lunch that day, intending to both determine Iselle's Maidenship and to (embarrassedly) express her interest in spending more time together. Iselle agrees.
 
@@ -30,11 +50,11 @@ As justification for this decision, Minori cites the hardships she's endured as 
 
 Iselle, somewhat understanding, attempts to console her, promising to do her best to at least give Minori a more normal social life with a new friend. She gives her a piece of paper with her phone number on it, insisting that they address each other using their first names as Minori's first training exercise (though they do maintain their normal honorifics).
 
-## IV: In Concert
+### IV: In Concert
 
-## V: A New Era
+### V: A New Era
 
-## VI: Language of the Fae
+### VI: Language of the Fae
 
 <!--
 
