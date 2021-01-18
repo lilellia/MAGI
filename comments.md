@@ -28,7 +28,7 @@
 
 - There might be a better transcription, but the "Nn" is meant here as a sound of disagreement, reminiscient of the Japanese <ruby><rb>ううん</rb><rt style="font-size: 75%;">*uun*</rt></ruby>, as [here](https://www.google.com/url?q=https://www.crunchyroll.com/puella-magi-madoka-magica/episode-12-my-very-best-friend-591757):
 
-    @10:37: &nbsp; <ruby><rb>まどか</rb><rt style="font-size: 75%;">MADOKA:</rt>　「<rb style="text-decoration: underline;">ううん</rb><rt style="font-size: 75%;">*uun,*</rt>、<rb>違う...</rb><rt style="font-size: 75%;">*chigau...*</rt><rb>これで</rb><rt style="font-size: 75%;">*korede*</rt><rb>良かった</rb><rt style="font-size: 75%;">*yokatta*</rt><rb>んだ</rb><rt style="font-size: 75%;">*nda*</rt><rb>よ。</rb><rt style="font-size: 75%;">*yo,*</rt><rb>ほむらちゃん</rb><rt style="font-size: 75%;">*Homura-chan.*</rt>」</ruby>
+    @10:37: &nbsp; <ruby><rb>まどか</rb><rt style="font-size: 75%;">MADOKA:</rt>　「<rb style="text-decoration: underline;">ううん</rb><rt style="font-size: 75%;">*uun,*</rt>、<rb>違う</rb><rt style="font-size: 75%;">*chigau*</rt><rb>よ。</rb><rt style="font-size: 75%;">*yo,*</rt><rb>ほむらちゃん</rb><rt style="font-size: 75%;">*Homura-chan.*</rt>」</ruby>
 
     @12:27: &nbsp; <ruby><rb>まどか</rb><rt style="font-size: 75%;">MADOKA:</rt>　「<rb style="text-decoration: underline;">つうん</rb><rt style="font-size: 75%;">*uun,*</rt>、<rb>諦める</rb><rt style="font-size: 75%;">*akirumeru*</rt><rb>の</rb><rt style="font-size: 75%;">*no*</rt><rb>は</rb><rt style="font-size: 75%;">*wa,*</rt>、<rb>まだ</rb><rt style="font-size: 75%;">*mada*</rt><rb>早い</rb><rt style="font-size: 75%;">*hayai*</rt><rb>よ</rb><rt style="font-size: 75%;">*yo.*</rt>」</ruby>
 
