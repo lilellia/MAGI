@@ -9,32 +9,32 @@
 
 ## 7:15:12 (1988)
 
-- Sirelle 08 (.008): Kaskei Ari is born
-- Fis 19 (.121): Molva Natalia is born
+- Sirelle 08 (.008): [Kaskei Ari](../characters/kaskei-ari.md) is born
+- Fis 19 (.121): [Molva Natalia](../characters/molva-natalia.md) is born
 
 &nbsp;
 
 ## 7:16:5 (1994)
 
-- Kria 01 (.205): Miú Aya is born
+- Kria 01 (.205): [Miú Aya](../characters/miú-aya.md) is born
 
 &nbsp;
 
 ## 7:16:9 (1998)
 
-- Tiri 06 (.040): Minori Amara is born
-- Klesni 11 (.147): Calleni Nia is born
-- Kria 32 (.236): Molva Atris is born
+- Tiri 06 (.040): [Minori Amara](../characters/amara-minori.md) is born
+- Klesni 11 (.147): [Calleni Nia](../characters/calleni-nia.md) is born
+- Kria 32 (.236): [Molva Atris](../characters/molva-atris.md) is born
 
-## 7:16:10 (1998)
+## 7:16:10 (1999)
 
-- Brilia 09 (.281): Molva Iselle is born
+- Brilia 09 (.281): [Molva Iselle](../characters/molva-iselle.md) is born
 
 &nbsp;
 
 ## 7:16:13 (2002)
 
-- Pelio 14 (.184): Calleni Rena is born
+- Pelio 14 (.184): [Calleni Rena](../characters/calleni-rena.md) is born
 
 &nbsp;
 
@@ -68,7 +68,7 @@
 
 ## 7:17:11 (2013)
 
-- Enna 28 (.096): Terrorist attack on Siel Shopping Center; Nia dies at age 15
+- Enna 28 (.096): [Terrorist attack on Siel Shopping Center](../events/siel-shopping-center-incident.md); Nia dies at age 14
 - Klesni 01 (.137): Minori leaves CIA-MCA
 - Klesni 18 (.154): Minori transfers to Irèle HS for autumn term
 

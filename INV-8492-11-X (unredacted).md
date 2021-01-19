@@ -16,7 +16,7 @@ This is a report summarizing the investigation into the recent attack on the Sie
 
 2. **The Investigation**
 
-    The investigation began when 1 Lt and Maiden codenamed Snow Leopard of the Magical Combat Unit, stationed in Siel, responded nearly immediately to the scene. Though not on official duty, she had accompanied Calleni Nia, aged 15 and one of the fatally wounded, to the location just minutes before the incident. She would affirm in her report that she had noticed no reason to suspect the impending incident, nor did she take notice of any magical Imprint in the area, neither before nor immediately following the explosion.
+    The investigation began when 1 Lt and Maiden codenamed Snow Leopard of the Magical Combat Unit, stationed in Siel, responded nearly immediately to the scene. Though not on official duty, she had accompanied Calleni Nia, aged 14 and one of the fatally wounded, to the location just minutes before the incident. She would affirm in her report that she had noticed no reason to suspect the impending incident, nor did she take notice of any magical Imprint in the area, neither before nor immediately following the explosion.
 
     Local police arrived on scene at 1618 hours. According to our investigations, these officers prioritized the evacuation and rescue of those persons nearest the epicenter of the explosions, followed swiftly by the remainder of the building. They, as well, found no immediate indications as the perpetrator(s) of the attack.
 
