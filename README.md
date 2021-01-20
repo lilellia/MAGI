@@ -1,6 +1,6 @@
 # MAGI
 
-![](./continental_map.png)
+![](./continental_map.jpg)
 
 ## Navigation
 
@@ -10,15 +10,29 @@
 - [Calendar Info](./calendar/info.md)
 - [`cleressian_date` module](./calendar/cleressian_date.py)
 
+### Characters
+
+- [Amara Minori](./characters/amara-minori.md)
+- [Calleni Nia](./characters/calleni-nia.md)
+- [Calleni Rena](./characters/calleni-rena.md)
+- [Kaskei Ari](./characters/kaskei-ari.md)
+- Koyo Gwynne
+- [Miú Aya](./characters/miú-aya.md)
+- [Molva Atris](./characters/molva-atris.md)
+- [Molva Iselle](./characters/molva-iselle.md)
+- [Molva Natalia](./characters/molva-natalia.md)
+- Stroa Kisa
+- Sumia Vivian
+
 ## Summary
 
 ### I: The Past Chases the Present
 
-[Amara Minori](./characters/amara-minori.md), our narrator and protagonist, wakes up from a nightmare early in the morning. Staring in the mirror, she activates her Maiden transformation before collapsing in grief and anguish. A few hours later, she heads to school, where she's distracted and even more distant than usual. The boy sitting next to her in class, [Molva Atris](./characters/molva-atris.md), takes note and joins her on the school for lunch, where she eventually reveals that one year ago, to the day, her best friend, Calleni Nia, died. Trying to help her put a positive spin on the day, he invites her to the picnic that he and his younger sister, [Iselle](./characters/molva-iselle.md), are planning to have after school.
+[Amara Minori](./characters/amara-minori.md), our narrator and protagonist, wakes up from a nightmare early in the morning. Staring in the mirror, she activates her Maiden transformation before collapsing in grief and anguish. A few hours later, she heads to school, where she's distracted and even more distant than usual. The boy sitting next to her in class, [Molva Atris](./characters/molva-atris.md), takes note and joins her on the school for lunch, where she eventually reveals that one year ago, to the day, her best friend, [Calleni Nia](./characters/calleni-nia.md), died. Trying to help her put a positive spin on the day, he invites her to the picnic that he and his younger sister, [Iselle](./characters/molva-iselle.md), are planning to have after school.
 
 By the time the school day ends, she has decided to go with them, meeting Iselle in her classroom for the first time before they leave for the picnic. Because Minori is such an enigma, having transferred to their school and having never spoken about her past, Iselle decides to ask about it and, to their surprise, Minori decides to answer, revealing that Nia was killed in a [terrorist attack](./events/siel-shopping-center-incident.md) only minutes after the two had parted ways.
 
-Suddenly, she gets a phone call from Kaskei Ari, her former handler from when she worked for the military's Magical Combat Assist unit. Ari informs her of a planned attack at the train station near her in just over half an hour, insisting that she is the only one he trusts to stop it from happening. As her emotions (and magical power) flow through her, the power also flows through her keystone necklace that Iselle is holding. To both girls' surprise, Iselle can sense this power, though she can't identify it. But without time to explain, Minori rushes off to the train station.
+Suddenly, she gets a phone call from [Kaskei Ari](./characters/kaskei-ari.md), her former handler from when she worked for the military's Magical Combat Assist unit. Ari informs her of a planned attack at the train station near her in just over half an hour, insisting that she is the only one he trusts to stop it from happening. As her emotions (and magical power) flow through her, the power also flows through her keystone necklace that Iselle is holding. To both girls' surprise, Iselle can sense this power, though she can't identify it. But without time to explain, Minori rushes off to the train station.
 
 ### II: Same, Yet Different
 
