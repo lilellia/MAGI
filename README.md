@@ -12,14 +12,14 @@
 
 ### Characters
 
-- [Amara Minori](./characters/amara-minori.md)
+- [Amara Minori](./characters/amara_minori.html)
 - [Calleni Nia](./characters/calleni-nia.md)
 - [Calleni Rena](./characters/calleni-rena.md)
 - [Kaskei Ari](./characters/kaskei-ari.md)
 - Koyo Gwynne
 - [Miú Aya](./characters/miú-aya.md)
 - [Molva Atris](./characters/molva-atris.md)
-- [Molva Iselle](./characters/molva-iselle.md)
+- [Molva Iselle](./characters/molva_iselle.html)
 - [Molva Natalia](./characters/molva-natalia.md)
 - Stroa Kisa
 - Sumia Vivian
