@@ -11,20 +11,24 @@
 
 <!-- styling for C89 differences table -->
 <style>
-    .same {
+    code {
+        font-style: normal;
+    }
+
+    .c89-same {
         background-color: #a3ffba;
         color: #333;
         padding: 2px;
     }
 
-    .similar {
+    .c89-similar {
         background-color: #fffca3;
         color: #333;
         padding: 2px;
     }
 
-    .different {
-        background-color:#ffa3a3;
+    .c89-different {
+        background-color: #ffa3a3;
         color: #333;
         padding: 2px;
     }
@@ -88,286 +92,458 @@
     <p>The first day of the first year would be "1:1:1 Sirelle 1" or 0001.001, and the 43rd day of the 677th year would
         be "3:7:1 Tiri 9" or 0677.043.</p>
 
-    <h2>cleressian_date module</h2>
+    <h2 id="cleressianDate-js-docs"><code>cleressianDate.js</code> Documentation</h2>
 
-    <div class="language-python">
-        <!-- class constructor -->
-        <p>
-            <code>class CleressianDate(grand_cycle, cycle, year, month=Month.SIRELLE, day=1)</code>
-        </p>
-        <blockquote>
-            <p>
-                The value for <code>month</code> should be a <code>Month</code> enum or interpretable as one.
-                All other arguments should be integers. The values for <code>month</code> and <code>day</code> are
-                optional and default to <code>Month.SIRELLE</code> and <code>1</code>, respectively. These five
-                arguments are stored internally and easily accessed.
-            </p>
-            <p>
-                This constructor validates the date before the object is created. For this validation, the following
-                must be true:
-                <ul>
-                    <li>
-                        <code>cycle</code> must be between 1 and 23 (inclusive)
-                    </li>
-                    <li>
-                        <code>year</code> must be between 1 and 13 (inclusive)
-                    </li>
-                    <li>
-                        <code>month</code> must be a <code>Month</code> enum or interpretable as one (under the
-                        current implementation, this means that it must be an integer <code>1</code>, <code>2</code>,
-                        ..., <code>10</code>).
-                    </li>
-                    <li>
-                        <code>day</code> must be between 1 and a calculated value, <code>allowed_days</code>, which is
-                        34 when <code>month != Month.NEYU</code> (after interpretation), 6 for Neyu non-leap years,
-                        and 7 for Neyu leap years.
-                    </li>
-                </ul>
-            </p>
-        </blockquote>
+    <p>
+        The source code can be imported by including <code class="language-html" style="padding: 0.3em;">&lt;script
+            src="<a
+                href="https://pixielf.github.io/MAGI/static/cleressianDate.js">https://pixielf.github.io/MAGI/static/cleressianDate.js</a>"&gt;&lt;/script&gt;</code>
+        in the HTML file.
+    </p>
 
-        <!-- from_absolute_date -->
-        <p>
-            <code>
-                @classmethod
-                CleressianDate.from_absolute_date(year, day=1)</code>
-        </p>
+    &nbsp;
 
-        <blockquote>
-            <p>
-                This is an alternate constructor, using the absolute date instead. Both values should be integers.
-            </p>
-        </blockquote>
+    <div class="language-js">
+        <div id="cdjsdocs-MONTHS">
+            <code style="padding: 1ex;">
+                static MONTHS = ["", "Sirelle", "Tiri", "Enna", "Fis", "Klesni", "Pelio", "Kria", "Sui", "Brilia",
+                "Neyu"]
+            </code>
+            <blockquote>
+                <p>
+                    An array that can be used to look up the name of a month given its index. For a concrete date,
+                    <code>a</code>, this can be done using the <a
+                        href="#cdjsdocs-monthName"><code>a.monthName</code></a>
+                    getter.
+                </p>
+                <p>
+                    Note that <code>MONTHS[0] == ""</code>. This is to emulate the 1-indexing used by the calendar
+                    system.
+                </p>
+            </blockquote>
+        </div>
 
-        <!-- strptime -->
-        <p>
-            <code>
-                @classmethod
-                CleressianDate.strptime(date_str, fmt="%x")</code>
-        </p>
+        <div id="cdjsdocs-constructor">
+            <code style="padding: 1ex;">
+                constructor(grandCycle=1, cycle=1, year=1, month=1, day=1)
+            </code>
+            <blockquote>
+                <p>
+                    Create a new <code>CleressianDate</code> object. The value for <code>month</code> may be either the
+                    integer index for the month (1, 2, ..., 10) or the name of the month as a string. The other four
+                    parameters should be integers.
+                </p>
+                <p>
+                    This constructor performs a verification on the passed date. In particular, <code>cycle</code> must
+                    be between 1 and 23, <code>year</code> must be between 1 and 13, <code>month</code> must be between
+                    1 and 10 (or a proper month name), and <code>day</code> must be a valid day for the given month. If
+                    this verification fails, a <code>RangeError</code> is thrown.
+                </p>
+                <p>
+                    All five passed values are directly readable attributes of the constructed date.
+                </p>
+            </blockquote>
+        </div>
 
-        <blockquote>
-            <p>
-                This is an alternate constructor, using a string representation of the date (defaulting to
-                <code>"%x"</code>).
-            </p>
-            <p>
-                NOTE: This method is not currently implemented.
-            </p>
-            <p>
-                <pre><code>
-                >>> CleressianDate.strptime("3:7:1 Tiri 9")
-                CleressianDate(grand_cycle=3, cycle=7, year=1, month=&lt;Month.TIRI: 2&gt;, day=9)
+        <div id="cdjsdocs-fromAbsoluteDate">
+            <code style="padding: 1ex;">
+                static fromAbsoluteDate(year, day=1)
+            </code>
+            <blockquote>
+                <p>
+                    An alternate constructor which instead uses absolute year and day, rather than the human-readable
+                    standard. Both parameters should be integers. This method uses the constructor, so the verification
+                    is applied in this case as well; this should only be a problem if <code>day</code> is too large
+                    to fit into the given year.
+                </p>
+                <p>
+                    Absolute year 1 == 1:1:1.
+                </p>
+                <pre><code style="font-style: normal;">// Example:
+In [1]: CleressianDate.fromAbsoluteDate(677, 43)
+Out[1]: Object { grandCycle: 3, cycle: 7, year: 1, month: 2, day: 9 }
+In [2]: CleressianDate.fromAbsoluteDate(677, 43) instanceof CleressianDate
+Out[2]: true</code></pre>
+        </div>
 
-                >>> CleressianDate.strptime("0677.043", "%X")
-                CleressianDate(grand_cycle=3, cycle=7, year=1, month=&lt;Month.TIRI: 2&gt;, day=9)
-            </code></pre>
-            </p>
-        </blockquote>
+        <div id="cdjsdocs-toAbsoluteDate">
+            <code style="padding: 1ex;">
+                toAbsoluteDate()
+            </code>
+            <blockquote>
+                <p>
+                    Interpret a <code>CleressianDate</code> and return its value as an absolute date. In particular,
+                    the return of this function is an object with two attributes: the absolute year and the day number.
+                </p>
+                <p>
+                    Absolute year 1 == 1:1:1.
+                </p>
+                <pre><code>// Example:
+In [1]: new CleressianDate(3, 7, 1, 'Tiri', 9).toAbsoluteDate()
+Out[1]: Object { year: 677, day: 43 }
+In [2]: new CleressianDate(3, 7, 1, 'Tiri', 9).toAbsoluteDate().year
+Out[2]: 677
 
-        <!-- is_leap_year -->
-        <p>
-            <code>
-                @classmethod
-                CleressianDate.is_leap_year(grand_cycle, cycle, year)</code>
-        </p>
+// For any CleressianDate a:
+In [3]: t = a.toAbsoluteDate();
+In [4]: CleressianDate.fromAbsoluteDate(t.year, t.day).equals(a)
+Out[4]: true
 
-        <blockquote>
-            <p>
-                All arguments should be integers. This method returns <code>True</code> when the corresponding year is a
-                leap year, and <code>False</code> otherwise.
-            </p>
-        </blockquote>
+// For any values of year and day (for which fromAbsoluteDate doesn't throw an error):
+In [5]: t = CleressianDate.fromAbsoluteDate(year, day);
+In [6]: t.toAbsoluteDate().year == year
+Out[6]: true
+In [7]: t.toAbsoluteDate().day == day
+Out[7]: true</code></pre>
+            </blockquote>
+        </div>
 
-        <!-- month_name -->
-        <p>
-            <code>
-                @property
-                cd.month_name </code>
-        </p>
+        <div id="cdjsdocs-monthName">
+            <code style="padding: 1ex;">
+                get monthName()
+            </code>
+            <blockquote>
+                <p>
+                    Return the name of the month that the date is in. Note that this is a getter, meaning that it can
+                    be called as an attribute.
+                </p>
+                <pre><code>// Example:
+In [1]: a = new CleressianDate(3, 7, 1, 'Tiri', 9);
+In [2]: a.month
+Out[2]: 2
+In [3]: a.monthName
+Out[3]: "Tiri"</code></pre>
+            </blockquote>
+        </div>
 
-        <blockquote>
-            <p>
-                In addition to the five stored values mentioned above, a property is defined to get the name of the
-                month
-                for a date in question, as a string.
-            </p>
+        <div id="cdjsdocs-isLeapYear">
+            <code style="padding: 1ex;">
+                static isLeapYear(cycle, year)
+            </code>
+            <blockquote>
+                <p>
+                    Return <code>true</code> when _:cycle:year is a leap year and <code>false</code> otherwise.
+                </p>
+            </blockquote>
+        </div>
 
-            <p>
-                <pre><code>
-                >>> CleressianDate(3, 7, 1, Month.TIRI, 9).month_name
-                'Tiri'
-            </code></pre>
-            </p>
-        </blockquote>
+        <div id="cdjsdocs-daysInMonth">
+            <code style="padding: 1ex;">
+                static daysInMonth(cycle, year, month)
+            </code>
+            <blockquote>
+                <p>
+                    Return the number of days in the given month, which also (for the purposes of leap years), depends
+                    on the cycle and year. All three parameters should be integers.
+                </p>
+                <p>
+                    The output will be one of the following values:
+                    <ul>
+                        <li>34: if <code>month</code> is not 10</li>
+                        <li>7: if <code>month</code> is 10 and _:cycle:year is a leap year
+                        </li>
+                        <li>6: if <code>month</code> is 10 and _:cycle:year is not a leap year</li>
+                    </ul>
+                </p>
+            </blockquote>
+        </div>
 
-        <!-- strftime -->
-        <p>
-            <code>cd.strftime(fmt="%x")</code>
-        </p>
+        <div id="cdjsdocs-daysInYear">
+            <code style="padding: 1ex;">
+                static daysInYear(cycle, year)
+            </code>
+            <blockquote>
+                <p>
+                    Return the number of days in the given year. The output is 313 when _:cycle:year is a leap year
+                    and 312 otherwise.
+                </p>
+            </blockquote>
+        </div>
 
-        <blockquote>
-            <p>
-                This is used to convert a date object to string. It takes a string format as its only argument,
-                defaulting to <code>"%x"</code>.
-            </p>
-
-            <p>
-                <pre><code>
-                >>> cd = CleressianDate(3, 7, 1, Month.TIRI, 9)
-                >>> cd.strftime()
-                '3:7:1 Tiri 9'
-                >>> cd.strftime('The date has a grand cycle of %g.')
-                'The date is in grand cycle 3.'
-            </code></pre>
-            </p>
-
-            <p>
-                This method is actually a wrapper on <code>__format__</code>, meaning that built-in string formatting
-                is also supported. In addition, <code>__str__</code> also uses this code, so <code>str(cd)</code> is
-                equivalent to <code>cd.strftime()</code>
-            </p>
-            <p>
-                <pre><code>
-                >>> '{}'.format(cd)
-                '3:7:1 Tiri 9'
-                >>> f'The date is in grand cycle {cd:%g}.'
-                'The date is in grand cycle 3.'
-            </code></pre>
-            </p>
-        </blockquote>
-
-        <!-- class constructor -->
-        <p>
-            <code>cd.to_absolute_date()</code>
-        </p>
-
-        <blockquote>
-            <p>
-                Returns the date as a <code>tuple</code> whose elements are the date's absolute year and the absolute
-                day,
-                as integers.
-            </p>
-
-            <p>
-                <pre><code>
-                >>> a = CleressianDate(3, 7, 1, Month.TIRI, 9).to_absolute_date()
-                >>> a
-                AbsoluteDate(year=677, day=43)
-            </code></pre>
-            </p>
-
-            <p>
-                <code>AbsoluteDate</code> is a <code>collections.namedtuple</code>, meaning that we can access its
-                values by name or by position:
-            </p>
-            <p>
-                <pre><code>
-                >>> isinstance(a, tuple)
-                True
-                >>> f'{a.year=}, {a[1]=}'
-                'a.year=677, a[1]=43'
-            </code></pre>
-            </p>
-        </blockquote>
-
-        <h3><code>strftime</code> and <code>strptime</code> format codes</h3>
+        <h3 id="cdjsdocs-comparisons">Comparison Methods</h3>
 
         <p>
-            Attention should be paid to the differences between this standard and the 1989 C standard. Rows in the table
-            are colored according to the following convention: <span class="same">the standards are the same</span>,
-            <span class="similar">the standards are similar</span>, and <span class="different">the standards
-                are completely different.</span>
-
+            For the purposes of this discussion, consider <code>x &lt; y</code> when <code>x</code> defines a date
+            which occurs before <code>y</code>. Then, the following are defined (and throw <code>TypeError</code> if
+            the parameter(s) is/are not a <code>CleressianDate</code> object):
         </p>
 
-        <table class="c89-differences">
-            <tr>
-                <th>Format Code</th>
-                <th>CleressianDate</th>
-                <th>C89 Standard</th>
-            </tr>
+        <div>
+            <code style="padding: 1ex;">
+                static compare(x, y)
+            </code>
+            <blockquote>
+                <p>
+                    The origin of all of these comparison functions. This returns 0 when the dates are equal,
+                    -1 when <code>x &lt; y</code>, and 1 if <code>x > y</code>.
+                </p>
+            </blockquote>
 
-            <tr>
-                <th class="different"><code>%g</code></th>
-                <td class="different">number of grand cycle <br/> (1, 2, 3, ...)</td>
-                <td class="different">N/A</td>
-            </tr>
-            <tr>
-                <th class="different"><code>%c</code></th>
-                <td class="different">number of cycle in grand cycle <br/> (1, 2, 3, ..., 23)</td>
-                <td class="different">Locale's appropriate date and time representation <br/> (e.g., Tue Aug 16 21:30:00 1988)</td>
-            </tr>
-            <tr>
-                <th class="similar"><code>%y</code></th>
-                <td class="similar">number of year within cycle <br/> (1, 2, 3, ..., 13)</td>
-                <td class="similar">Year without century as a zero-padded decimal number. <br/> (00, 01, 02, ..., 99)</td>
-            </tr>
-            <tr>
-                <th class="same"><code>%b</code></th>
-                <td class="same">abbreviated name of month <br/> (Sir, Tir, ..., Ney)</td>
-                <td class="same">Month as locale's abbreviated name. <br/> (Jan, Feb, ..., Dec)</td>
-            </tr>
-            <tr>
-                <th class="same"><code>%B</code></th>
-                <td class="same">full name of month <br/> (Sirelle, Tiri, ..., Neyu)</td>
-                <td class="same">Month as locale's full name. <br/> (January, February, ..., December)</td>
-            </tr>
-            <tr>
-                <th class="similar"><code>%m</code></th>
-                <td class="similar">number of month <br/> (1, 2, 3, ..., 10)</td>
-                <td class="similar">Month as a zero-padded decimal number. <br/> (01, 02, 03, ..., 12)</td>
-            </tr>
-            <tr>
-                <th class="similar"><code>%d</code></th>
-                <td class="similar">number of day of the month <br/> (1, 2, 3, ..., 34)</td>
-                <td class="similar">Day of the month as a zero-padded decimal number. <br/> (01, 02, 03, ..., 31)</td>
-            </tr>
-            <tr>
-                <th class="similar"><code>%j</code></th>
-                <td class="similar">day of the year <br/> (1, 2, 3, ..., 313)</td>
-                <td class="similar">Day of the year as a zero-padded decimal number. <br/> (001, 002, 003, ..., 366)</td>
-            </tr>
-            <tr>
-                <th class="similar"><code>%Y</code></th>
-                <td class="similar">number of absolute year <br/> (1, 2, 3, ...)</td>
-                <td class="similar">Year with century as a decimal number. <br/> (0001, 0002, 03, ..., 9999)</td>
-            </tr>
-            <tr>
-                <th class="same"><code>%x</code></th>
-                <td class="same">standard form date representation <br/> (shorthand for <code>%g:%c:%y %B %d</code>)</td>
-                <td class="same">Locale's appropriate date representation. <br/> (e.g., 08/16/1988 for en_US)</td>
-            </tr>
-            <tr>
-                <th class="different"><code>%X</code></th>
-                <td class="different">absolute form date representation <br/> (shorthand for <code>%04Y.%03j</code>)</td>
-                <td class="different">Locale's appropriate time representation <br/> (e.g., 21:30:00 for en_US)</td>
-            </tr>
-            <tr>
-                <th class="same"><code>%%</code></th>
-                <td class="same"> A literal <code>%</code> character</td>
-                <td class="same"> A literal <code>%</code> character</td>
-            </tr>
-        </table>
+            <table class="pretty">
+                <tr>
+                    <th>Comparison</th>
+                    <th>"Equivalent" Method Call</th>
+                </tr>
+                <tr>
+                    <th><code>x == y</code></th>
+                    <td><code>x.equals(y)</code> or <code>x.eq(y)</code></td>
+                </tr>
+                <tr>
+                    <th><code>x != y</code></th>
+                    <td><code>!x.equals(y)</code>, <code>!x.eq(y)</code>, or <code>x.ne(y)</code></td>
+                </tr>
+                <tr>
+                    <th><code>x &lt; y</code></th>
+                    <td><code>x.lt(y)</code></td>
+                </tr>
+                <tr>
+                    <th><code>x &lt;= y</code></th>
+                    <td><code>x.le(y)</code></td>
+                </tr>
+                <tr>
+                    <th><code>x &gt; y</code></th>
+                    <td><code>x.gt(y)</code></td>
+                </tr>
+                <tr>
+                    <th><code>x &gt;= y</code></th>
+                    <td><code>x.ge(y)</code></td>
+                </tr>
+            </table>
+        </div>
 
-        <p>
-            In most cases, the similar standards are different in that the C89 standard gives <i>padded</i> values
-            where this standard does not. Instead, the CleressianDate standard provides padding options: all of the
-            numeric formats support <code>%0N_</code> structures, where <code>N</code> is some integer; this will
-            pad the formatted value to have <code>N</code> digits. For example:
-        </p>
-        <p>
-            <pre><code>
-            >>> cd = CleressianDate(3, 7, 1, Month.TIRI, 9)
-            >>> cd.strftime('%Y.%j')  # use only as many digits as necessary
-            '677.43'
-            >>> cd.strftime('%04Y.%03j')  # pad absolute year to YYYY and absolute day to JJJ
-            '0677.043'
-        </code></pre>
-        </p>
+        <h3 id="cdjsdocs-arithmetic">Arithmetic Methods</h3>
+        <div>
+            <div id="cdjsdocs-distance">
+                <code style="padding: 1ex;">
+                    static distance(x, y)
+                </code>
+                <blockquote>
+                    <p>
+                        Return an object that contains the number of days and years between the two given dates. The
+                        values
+                        returned are always positive, meaning that this could be interpreted as <code>abs(x - y)</code>.
+                    </p>
+                    <pre><code>// Example:
+In [1]: a = new CleressianDate(3, 7, 1, 'Tiri', 9);
+In [2]: b = new CleressianDate(3, 7, 1, 'Tiri', 11);
+In [3]: CleressianDate.distance(a, b)
+Out[3]: Object { years: 0, days: 2 }
+
+In [4]: x = CleressianDate.fromAbsoluteDate(3000, 41);
+In [5]: y = CleressianDate.fromAbsoluteDate(211, 310);
+In [6]: CleressianDate.distance(x, y)
+Out[6]: Object { years: 2788, days: 43 }</code></pre>
+                </blockquote>
+            </div>
+
+            <div id="cdjsdocs-plus">
+                <code style="padding: 1ex;">
+                    plus(years=0, days=0)
+                </code>
+                <blockquote>
+                    <p>
+                        Return a new date with the given number of years and days added.
+                    </p>
+                </blockquote>
+            </div>
+
+            <div id="cdjsdocs-minus">
+                <code style="padding: 1ex;">
+                    minus(years=0, days=0)
+                </code>
+                <blockquote>
+                    <p>
+                        Return a new date with the given number of years and days subtracted.
+                    </p>
+                    <p>
+                        For all <code>CleressianDate</code>s, <code>a</code>, we have
+                    </p>
+                    <pre><code>// For all CleressianDates a and integers years and days:
+In [1]: a.plus(years, days).minus(years, days).equals(a)
+Out[1]: true
+In [2]: a.minus(years, day).plus(years, days).equals(a)
+Out[2]: true</code></pre>
+                </blockquote>
+            </div>
+        </div>
+
+        <h3 id="cdjsdocs-formatting">Formatting methods</h3>
+        <div>
+            <div id="cdjsdocs-strftime">
+                <code style="padding: 1ex;">
+                    strftime(template)
+                </code>
+                <blockquote>
+                    <p>
+                        Return a string representation of the date according to the template string. See below for
+                        information about template string placeholders.
+                    </p>
+                    <pre><code>// Example:
+In [1]: a = CleressianDate(3, 7, 1, 'Tiri', 9);
+In [2]: a.strftime("Grand Cycle = %g, Cycle = %c, Year = %y")
+Out[2]: 'Grand Cycle = 3, Cycle = 7, Year = 1'</code></pre>
+                </blockquote>
+            </div>
+
+            <div id="cdjsdocs-toString">
+                <code style="padding: 1ex;">
+                    toString(template="%x")
+                </code>
+                <blockquote>
+                    <p>
+                        Return a string representation of the date.
+                    </p>
+                    <p>
+                        This is a wrapper around <a href="#cdjsdocs-strftime"><code>strftime(template)</code></a>, and
+                        the functions are identical except that <code>toString</code>'s template parameter is optional
+                        and defaults to the standard <code>"%x"</code> format.
+                    </p>
+                    <pre><code>// For all CleressianDates a and integers years and days:
+In [1]: a.plus(years, days).minus(years, days).equals(a)
+Out[1]: true
+In [2]: a.minus(years, day).plus(years, days).equals(a)
+Out[2]: true</code></pre>
+                </blockquote>
+            </div>
+
+            <div id="cdjsdocs-strptime">
+                <code style="padding: 1ex;">
+                    static strptime(dateStr, template)
+                </code>
+                <blockquote>
+                    <p>
+                        <span class="strong">Not Currently Implemented.</span> Returns a CleressianDate by parsing
+                        the given template string. Any constructor values which are not given or inferrable in the
+                        date string are set to 1.
+                    </p>
+                    <pre><code>// Example:
+In [1]: CleressianDate.strptime("3:7:1 Tiri 9", "%x")
+Out[1]: Object { grandCycle=3, cycle=7, year=1, month=2, day=3 }
+In [2]: CleressianDate.strptime("Tiri 9", "%B %d")
+Out[2]: Object { grandCycle=1, cycle=1, year=1, month=2, day=3 }</code></pre>
+                </blockquote>
+            </div>
+
+            <h3 id="cdjsdocs-template-specs">Template Specifications</h3>
+            <div>
+                <p>
+                    This standard is based on the 1989 C standard, which defines the format codes for various date
+                    and time objects. However, attention should be paid to the differences between these two
+                    specifications, as they are not identical. Rows in the table are colored according to the following
+                    convention: <span class="c89-same">the standards are the same</span>, <span class="c89-similar">the
+                        standards are similar</span>, and <span class="c89-different">the standards are completely
+                        different.</span>
+                </p>
+
+
+                <div>
+                    <table class="c89-differences">
+                        <tr>
+                            <th>Format Code</th>
+                            <th>CleressianDate</th>
+                            <th>C89 Standard</th>
+                        </tr>
+
+                        <tr>
+                            <th class="c89-different"><code>%g</code></th>
+                            <td class="c89-different">number of grand cycle <br /> (1, 2, 3, ...)</td>
+                            <td class="c89-different">N/A</td>
+                        </tr>
+                        <tr>
+                            <th class="c89-different"><code>%c</code></th>
+                            <td class="c89-different">number of cycle in grand cycle <br /> (1, 2, 3, ..., 23)</td>
+                            <td class="c89-different">Locale's appropriate date and time representation <br /> (e.g.,
+                                Tue Aug 16
+                                21:30:00 1988)</td>
+                        </tr>
+                        <tr>
+                            <th class="c89-similar"><code>%y</code></th>
+                            <td class="c89-similar">number of year within cycle <br /> (1, 2, 3, ..., 13)</td>
+                            <td class="c89-similar">Year without century as a zero-padded decimal number. <br /> (00,
+                                01, 02, ...,
+                                99)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="c89-same"><code>%b</code></th>
+                            <td class="c89-same">abbreviated name of month <br /> (Sir, Tir, ..., Ney)</td>
+                            <td class="c89-same">Month as locale's abbreviated name. <br /> (Jan, Feb, ..., Dec)</td>
+                        </tr>
+                        <tr>
+                            <th class="c89-same"><code>%B</code></th>
+                            <td class="c89-same">full name of month <br /> (Sirelle, Tiri, ..., Neyu)</td>
+                            <td class="c89-same">Month as locale's full name. <br /> (January, February, ..., December)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="c89-similar"><code>%m</code></th>
+                            <td class="c89-similar">number of month <br /> (1, 2, 3, ..., 10)</td>
+                            <td class="c89-similar">Month as a zero-padded decimal number. <br /> (01, 02, 03, ..., 12)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="c89-similar"><code>%d</code></th>
+                            <td class="c89-similar">number of day of the month <br /> (1, 2, 3, ..., 34)</td>
+                            <td class="c89-similar">Day of the month as a zero-padded decimal number. <br /> (01, 02,
+                                03, ..., 31)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="c89-similar"><code>%j</code></th>
+                            <td class="c89-similar">day of the year <br /> (1, 2, 3, ..., 313)</td>
+                            <td class="c89-similar">Day of the year as a zero-padded decimal number. <br /> (001, 002,
+                                003, ..., 366)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="c89-similar"><code>%Y</code></th>
+                            <td class="c89-similar">number of absolute year <br /> (1, 2, 3, ...)</td>
+                            <td class="c89-similar">Year with century as a decimal number. <br /> (0001, 0002, 03, ...,
+                                9999)</td>
+                        </tr>
+                        <tr>
+                            <th class="c89-same"><code>%x</code></th>
+                            <td class="c89-same">standard form date representation <br /> (shorthand for <code>%g:%c:%y
+                                    %B %d</code>)
+                            </td>
+                            <td class="c89-same">Locale's appropriate date representation. <br /> (e.g., 08/16/1988 for
+                                en_US)</td>
+                        </tr>
+                        <tr>
+                            <th class="c89-different"><code>%X</code></th>
+                            <td class="c89-different">absolute form date representation <br /> (shorthand for
+                                <code>%04Y.%03j</code>)
+                            </td>
+                            <td class="c89-different">Locale's appropriate time representation <br /> (e.g., 21:30:00
+                                for en_US)
+                            </td>
+                        </tr>
+                        <tr>
+                            <th class="c89-same"><code>%%</code></th>
+                            <td class="c89-same"> A literal <code>%</code> character</td>
+                            <td class="c89-same"> A literal <code>%</code> character</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <p>
+                    The primary difference between the two specifications is that this specification does not pad its
+                    values to a constant width, though the C89 standard does. However, the CleressianDate standard
+                    does support padding options: all of the numeric formats support <code style="padding: 0.5em;">
+                        %0N_</code> structures, where <code>N</code> is some integer; this will pad the formatted value
+                    to have at least <code>N</code> digits. Note that <code>"%X"</code> includes the pads in its
+                    expansion: <code>"%04Y.03j"</code>.
+                </p>
+                <pre><code>// Example:
+In [1]: a = CleressianDate(3, 7, 1, Month.TIRI, 9);
+In [2]: a.strftme("%Y.%j")      // use only as many digits as necessary
+Out[2]: '677.43'
+In [3]: a.strftime('%04Y.%03j') // pad absolute year to 4 digits, day-of-year to 3 digits
+Out[3]: '0677.043'</code></pre>
+            </div>
+        </div>
     </div>
 
 </body>
 
 </html>
-

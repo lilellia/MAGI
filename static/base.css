@@ -24,6 +24,25 @@ li {
   text-decoration: underline;
 }
 
+
+table.pretty {
+  border-collapse: collapse;
+  margin: 0 0 1em 1em;
+}
+
+table.pretty th {
+  background: #2f2a38;
+  text-align: center;
+  padding: 0.5em;
+  border: 1px solid #aaa;
+}
+
+table.pretty td {
+  text-align: center;
+  padding: 0.5em;
+  border: 1px solid #aaa;
+}
+
 /* maiden rank table */
 
 table.maiden-ranks {
