@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Calendar System</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../static/style.css">
+
+    <!-- use Prism syntax highlighter -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism.css" rel="stylesheet" />
+</head>
+
+<!-- styling for C89 differences table -->
+<style>
+    .same {
+        background-color: #a3ffba;
+        color: #333;
+        padding: 2px;
+    }
+
+    .similar {
+        background-color: #fffca3;
+        color: #333;
+        padding: 2px;
+    }
+
+    .different {
+        background-color:#ffa3a3;
+        color: #333;
+        padding: 2px;
+    }
+</style>
+
+<body>
+
+    <!-- use Prism syntax highlighter -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-core.min.js"
+        integrity="sha512-xR+IAyN+t9EBIOOJw5m83FTVMDsPd63IhJ3ElP4gmfUFnQlX9+eWGLp3P4t3gIjpo2Z1JzqtW/5cjgn+oru3yQ=="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js"
+        integrity="sha512-zc7WDnCM3aom2EziyDIRAtQg1mVXLdILE09Bo+aE1xk0AM2c2cVLfSW9NrxE5tKTX44WBY0Z2HClZ05ur9vB6A=="
+        crossorigin="anonymous"></script>
+
+    <h1>Calendar System</h1>
+
+    <p>
+        Let the planetary orbital period (solar year) be 312.311 local days long, and let the moon's orbital period be
+        34.397 local days long. This creates a balance of 9.106... lunar cycles per solar year. If we let the calendar
+        consist of nine months, this gives nine months of 34 days (306 total) with six or seven intercalendary days.
+    </p>
+
+    <p>
+        We name these ten periods as follows:
+        <ol>
+            <li>Sirelle</li>
+            <li>Tiri</li>
+            <li>Enna</li>
+            <li>Fis</li>
+            <li>Klesni</li>
+            <li>Pelio</li>
+            <li>Kria</li>
+            <li>Sui</li>
+            <li>Brilia</li>
+            <li>Neyu</li>
+        </ol>
+    </p>
+
+    <p>
+        These names originate as names of gods from the ancient mythology. Neyu was an organizer whose role was to bring
+        together the bickering gods and be a watcher over humanity.
+    </p>
+
+    <p>
+        What we observe is that 312.311 = 312 + 4/13 + 1/302.32..., meaning that we want four leap years per cycle of 13
+        years, which we can achieve with a pattern of "SSL SSL SSL S". After 13 years, 4060.043 days have passed, and
+        this calendar yields 4060 days in that period, making this system only 0.043 = 1/23.2... days short, meaning
+        that the calendar is short one full day after 23 cycles (299 years). In this case, the 23rd cycle can simply
+        include one extra day, making the pattern "SSL SSL SSL SSL L" for that cycle.
+    </p>
+
+    <p>
+        Because it'd otherwise be difficult to determine which years are leap years, etc., the date is generally written
+        in the form "G:C:Y MMM DD", where G is the grand-cycle (period of 23 cycles), C is the cycle (period of 13
+        years), Y is the year in the cycle, MMM is the name of the month, and DD is the day of the month. Another
+        option, which is usually reserved for computer file systems due to its lexicographic ordering, is "YYYY.JJJ",
+        where "YYYY" is the absolute year number, and "JJJ" is the day number of the year.
+    </p>
+
+    <p>The first day of the first year would be "1:1:1 Sirelle 1" or 0001.001, and the 43rd day of the 677th year would
+        be "3:7:1 Tiri 9" or 0677.043.</p>
+
+    <h2>cleressian_date module</h2>
+
+    <div class="language-python">
+        <!-- class constructor -->
+        <p>
+            <code>class CleressianDate(grand_cycle, cycle, year, month=Month.SIRELLE, day=1)</code>
+        </p>
+        <blockquote>
+            <p>
+                The value for <code>month</code> should be a <code>Month</code> enum or interpretable as one.
+                All other arguments should be integers. The values for <code>month</code> and <code>day</code> are
+                optional and default to <code>Month.SIRELLE</code> and <code>1</code>, respectively. These five
+                arguments are stored internally and easily accessed.
+            </p>
+            <p>
+                This constructor validates the date before the object is created. For this validation, the following
+                must be true:
+                <ul>
+                    <li>
+                        <code>cycle</code> must be between 1 and 23 (inclusive)
+                    </li>
+                    <li>
+                        <code>year</code> must be between 1 and 13 (inclusive)
+                    </li>
+                    <li>
+                        <code>month</code> must be a <code>Month</code> enum or interpretable as one (under the
+                        current implementation, this means that it must be an integer <code>1</code>, <code>2</code>,
+                        ..., <code>10</code>).
+                    </li>
+                    <li>
+                        <code>day</code> must be between 1 and a calculated value, <code>allowed_days</code>, which is
+                        34 when <code>month != Month.NEYU</code> (after interpretation), 6 for Neyu non-leap years,
+                        and 7 for Neyu leap years.
+                    </li>
+                </ul>
+            </p>
+        </blockquote>
+
+        <!-- from_absolute_date -->
+        <p>
+            <code>
+                @classmethod
+                CleressianDate.from_absolute_date(year, day=1)</code>
+        </p>
+
+        <blockquote>
+            <p>
+                This is an alternate constructor, using the absolute date instead. Both values should be integers.
+            </p>
+        </blockquote>
+
+        <!-- strptime -->
+        <p>
+            <code>
+                @classmethod
+                CleressianDate.strptime(date_str, fmt="%x")</code>
+        </p>
+
+        <blockquote>
+            <p>
+                This is an alternate constructor, using a string representation of the date (defaulting to
+                <code>"%x"</code>).
+            </p>
+            <p>
+                NOTE: This method is not currently implemented.
+            </p>
+            <p>
+                <pre><code>
+                >>> CleressianDate.strptime("3:7:1 Tiri 9")
+                CleressianDate(grand_cycle=3, cycle=7, year=1, month=&lt;Month.TIRI: 2&gt;, day=9)
+
+                >>> CleressianDate.strptime("0677.043", "%X")
+                CleressianDate(grand_cycle=3, cycle=7, year=1, month=&lt;Month.TIRI: 2&gt;, day=9)
+            </code></pre>
+            </p>
+        </blockquote>
+
+        <!-- is_leap_year -->
+        <p>
+            <code>
+                @classmethod
+                CleressianDate.is_leap_year(grand_cycle, cycle, year)</code>
+        </p>
+
+        <blockquote>
+            <p>
+                All arguments should be integers. This method returns <code>True</code> when the corresponding year is a
+                leap year, and <code>False</code> otherwise.
+            </p>
+        </blockquote>
+
+        <!-- month_name -->
+        <p>
+            <code>
+                @property
+                cd.month_name </code>
+        </p>
+
+        <blockquote>
+            <p>
+                In addition to the five stored values mentioned above, a property is defined to get the name of the
+                month
+                for a date in question, as a string.
+            </p>
+
+            <p>
+                <pre><code>
+                >>> CleressianDate(3, 7, 1, Month.TIRI, 9).month_name
+                'Tiri'
+            </code></pre>
+            </p>
+        </blockquote>
+
+        <!-- strftime -->
+        <p>
+            <code>cd.strftime(fmt="%x")</code>
+        </p>
+
+        <blockquote>
+            <p>
+                This is used to convert a date object to string. It takes a string format as its only argument,
+                defaulting to <code>"%x"</code>.
+            </p>
+
+            <p>
+                <pre><code>
+                >>> cd = CleressianDate(3, 7, 1, Month.TIRI, 9)
+                >>> cd.strftime()
+                '3:7:1 Tiri 9'
+                >>> cd.strftime('The date has a grand cycle of %g.')
+                'The date is in grand cycle 3.'
+            </code></pre>
+            </p>
+
+            <p>
+                This method is actually a wrapper on <code>__format__</code>, meaning that built-in string formatting
+                is also supported. In addition, <code>__str__</code> also uses this code, so <code>str(cd)</code> is
+                equivalent to <code>cd.strftime()</code>
+            </p>
+            <p>
+                <pre><code>
+                >>> '{}'.format(cd)
+                '3:7:1 Tiri 9'
+                >>> f'The date is in grand cycle {cd:%g}.'
+                'The date is in grand cycle 3.'
+            </code></pre>
+            </p>
+        </blockquote>
+
+        <!-- class constructor -->
+        <p>
+            <code>cd.to_absolute_date()</code>
+        </p>
+
+        <blockquote>
+            <p>
+                Returns the date as a <code>tuple</code> whose elements are the date's absolute year and the absolute
+                day,
+                as integers.
+            </p>
+
+            <p>
+                <pre><code>
+                >>> a = CleressianDate(3, 7, 1, Month.TIRI, 9).to_absolute_date()
+                >>> a
+                AbsoluteDate(year=677, day=43)
+            </code></pre>
+            </p>
+
+            <p>
+                <code>AbsoluteDate</code> is a <code>collections.namedtuple</code>, meaning that we can access its
+                values by name or by position:
+            </p>
+            <p>
+                <pre><code>
+                >>> isinstance(a, tuple)
+                True
+                >>> f'{a.year=}, {a[1]=}'
+                'a.year=677, a[1]=43'
+            </code></pre>
+            </p>
+        </blockquote>
+
+        <h3><code>strftime</code> and <code>strptime</code> format codes</h3>
+
+        <p>
+            Attention should be paid to the differences between this standard and the 1989 C standard. Rows in the table
+            are colored according to the following convention: <span class="same">the standards are the same</span>,
+            <span class="similar">the standards are similar</span>, and <span class="different">the standards
+                are completely different.</span>
+
+        </p>
+
+        <table class="c89-differences">
+            <tr>
+                <th>Format Code</th>
+                <th>CleressianDate</th>
+                <th>C89 Standard</th>
+            </tr>
+
+            <tr>
+                <th class="different"><code>%g</code></th>
+                <td class="different">number of grand cycle <br/> (1, 2, 3, ...)</td>
+                <td class="different">N/A</td>
+            </tr>
+            <tr>
+                <th class="different"><code>%c</code></th>
+                <td class="different">number of cycle in grand cycle <br/> (1, 2, 3, ..., 23)</td>
+                <td class="different">Locale's appropriate date and time representation <br/> (e.g., Tue Aug 16 21:30:00 1988)</td>
+            </tr>
+            <tr>
+                <th class="similar"><code>%y</code></th>
+                <td class="similar">number of year within cycle <br/> (1, 2, 3, ..., 13)</td>
+                <td class="similar">Year without century as a zero-padded decimal number. <br/> (00, 01, 02, ..., 99)</td>
+            </tr>
+            <tr>
+                <th class="same"><code>%b</code></th>
+                <td class="same">abbreviated name of month <br/> (Sir, Tir, ..., Ney)</td>
+                <td class="same">Month as locale's abbreviated name. <br/> (Jan, Feb, ..., Dec)</td>
+            </tr>
+            <tr>
+                <th class="same"><code>%B</code></th>
+                <td class="same">full name of month <br/> (Sirelle, Tiri, ..., Neyu)</td>
+                <td class="same">Month as locale's full name. <br/> (January, February, ..., December)</td>
+            </tr>
+            <tr>
+                <th class="similar"><code>%m</code></th>
+                <td class="similar">number of month <br/> (1, 2, 3, ..., 10)</td>
+                <td class="similar">Month as a zero-padded decimal number. <br/> (01, 02, 03, ..., 12)</td>
+            </tr>
+            <tr>
+                <th class="similar"><code>%d</code></th>
+                <td class="similar">number of day of the month <br/> (1, 2, 3, ..., 34)</td>
+                <td class="similar">Day of the month as a zero-padded decimal number. <br/> (01, 02, 03, ..., 31)</td>
+            </tr>
+            <tr>
+                <th class="similar"><code>%j</code></th>
+                <td class="similar">day of the year <br/> (1, 2, 3, ..., 313)</td>
+                <td class="similar">Day of the year as a zero-padded decimal number. <br/> (001, 002, 003, ..., 366)</td>
+            </tr>
+            <tr>
+                <th class="similar"><code>%Y</code></th>
+                <td class="similar">number of absolute year <br/> (1, 2, 3, ...)</td>
+                <td class="similar">Year with century as a decimal number. <br/> (0001, 0002, 03, ..., 9999)</td>
+            </tr>
+            <tr>
+                <th class="same"><code>%x</code></th>
+                <td class="same">standard form date representation <br/> (shorthand for <code>%g:%c:%y %B %d</code>)</td>
+                <td class="same">Locale's appropriate date representation. <br/> (e.g., 08/16/1988 for en_US)</td>
+            </tr>
+            <tr>
+                <th class="different"><code>%X</code></th>
+                <td class="different">absolute form date representation <br/> (shorthand for <code>%04Y.%03j</code>)</td>
+                <td class="different">Locale's appropriate time representation <br/> (e.g., 21:30:00 for en_US)</td>
+            </tr>
+            <tr>
+                <th class="same"><code>%%</code></th>
+                <td class="same"> A literal <code>%</code> character</td>
+                <td class="same"> A literal <code>%</code> character</td>
+            </tr>
+        </table>
+
+        <p>
+            In most cases, the similar standards are different in that the C89 standard gives <i>padded</i> values
+            where this standard does not. Instead, the CleressianDate standard provides padding options: all of the
+            numeric formats support <code>%0N_</code> structures, where <code>N</code> is some integer; this will
+            pad the formatted value to have <code>N</code> digits. For example:
+        </p>
+        <p>
+            <pre><code>
+            >>> cd = CleressianDate(3, 7, 1, Month.TIRI, 9)
+            >>> cd.strftime('%Y.%j')  # use only as many digits as necessary
+            '677.43'
+            >>> cd.strftime('%04Y.%03j')  # pad absolute year to YYYY and absolute day to JJJ
+            '0677.043'
+        </code></pre>
+        </p>
+    </div>
+
+</body>
+
+</html>
+

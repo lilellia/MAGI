@@ -25,7 +25,7 @@ class Month(enum.Enum):
 
 
 class CleressianDate:
-    def __init__(self, grand_cycle: int, cycle: int, year: int, month: int = 1, day: int = 1):
+    def __init__(self, grand_cycle: int, cycle: int, year: int, month: Month = Month.SIRELLE, day: int = 1):
         """ Create a new Clerèssian Date.
 
         Parameters:
@@ -57,16 +57,13 @@ class CleressianDate:
         if not (1 <= year <= 13):
             raise ValueError(f'year must be on ℤ[1, 13], not {year!r}')
 
-        if isinstance(month, Month):
-            month = month.value
-
-        if not (1 <= month <= 10):
-            raise ValueError(f'month must be on ℤ[1, 10], not {month!r}')
+        if not isinstance(month, Month):
+            month = Month(month)
 
         # We're allowed 34 days in every month except the intercalendary month 10,
         # where we're allowed 6 in a standard year and 7 in a leap year
         intercalendary_days = 6 + int(self.__class__.is_leap_year(grand_cycle, cycle, year))
-        allowed_days = 34 if month != 10 else intercalendary_days
+        allowed_days = 34 if month != Month.NEYU else intercalendary_days
         if not (1 <= day <= allowed_days):
             raise ValueError(f'day must be on ℤ[1, {allowed_days}], not {day!r}')
 
@@ -142,13 +139,13 @@ class CleressianDate:
 
     def to_absolute_date(self):
         year = 23 * 13 * (self.grand_cycle - 1) + 13 * (self.cycle - 1) + self.year
-        day = 34 * (self.month - 1) + self.day
+        day = 34 * (self.month.value - 1) + self.day
 
         return _AbsoluteDate(year, day)
 
     @property
     def month_name(self) -> str:
-        return Month(self.month).name.title()
+        return self.month.name.title()
 
     def __format__(self, fmt: str) -> str:
         """
@@ -158,44 +155,38 @@ class CleressianDate:
         %g      number of grand cycle as an unpadded decimal number
                 (1, 2, 3, ...)
 
-        %c      number of cycle as an zero-padded decimal number**
+        %c      number of cycle as an unpadded decimal number
                 (1, 2, 3, ..., 23)
 
-        %y      year of cycle as an zero-padded decimal number*
-                (01, 02, 03, ..., 13)
+        %y      number of year within cycle as an unpadded decimal number
+                (1, 2, 3, ..., 13)
 
-        %b      month as locale's abbreviated name*
-                (Sir, Tir, ..., Kle)
+        %b      abbreviated name of month
+                (Sir, Tir, Enn, ..., Kle)
 
-        %B      month as locale's full name*
-                (Sirelle, Tiri, ..., Klesni)
+        %B      full name of month
+                (Sirelle, Tiri, Enna, ..., Klesni)
 
-        %m      month as zero-padded decimal number*
-                (01, 02, ..., 10)
+        %m      number of month as an unpadded decimal number
+                (1, 2, 3, ..., 10)
 
-        %d      day of month as a zero padded decimal number*
-                (01, 02, 03, ..., 34)
+        %d      number of day of month as an unpadded decimal number
+                (1, 2, 3, ..., 34)
 
-        %j      day of the year as a zero-padded decimal number*
-                (001, 002, ..., 313)
+        %j      number of day of year as an unpadded decimal number
+                (1, 2, 3, ..., 313)
 
-        %Y      absolute year as a zero-padded decimal number, where GC01:C01:Y01 => 0001.**
-                (0001, 0002, ..., 9998, 9999)
+        %Y      number of absolute year as an unpadded decimal number
+                (1, 2, 3, ...)
 
-        %x      appropriate date representation*
-                shorthand for: %g:%c:%y %B %d
+        %x      standard form date representation
+                shorthand for %g:%c:%y %B %b
 
-        %X      absolute date representation**
-                shorthand for: %04Y.%03j
+        %X      absolute form date representation
+                shorthand for %04Y.%03j
 
         %%      a literal % character*
                 (%)
-
-
-        *consistent with 1989 C standard, which is also used by datetime's strftime
-        **inconsistent with 1989 C standard, which uses:
-            %c  Locale's appropriate date and time representation (e.g., "Tue Aug 16 21:30:00 1988")
-            %Y  Year with century as decimal number (0001, 0002, ..., 2013, 2014, ..., 9998, 9999)
         """
 
         fmt = fmt.replace('%x', '%g:%c:%y %B %d').replace('%X', '%04Y.%03j')
@@ -245,7 +236,7 @@ class CleressianDate:
 
     def __repr__(self) -> str:
         cls = self.__class__.__name__
-        return f'{cls}(grand_cycle={self.grand_cycle!r}, cycle={self.cycle!r}, year={self.year!r})'
+        return f'{cls}(grand_cycle={self.grand_cycle!r}, cycle={self.cycle!r}, year={self.year!r}, month={self.month!r}, day={self.day!r})'
 
     def __add__(self, absdate: _AbsoluteDate):
         raise NotImplementedError()
