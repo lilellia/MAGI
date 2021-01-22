@@ -20,6 +20,10 @@ li {
   font-weight: bold;
 }
 
+.ul {
+  text-decoration: underline;
+}
+
 /* maiden rank table */
 
 table.maiden-ranks {
