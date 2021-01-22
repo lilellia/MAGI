@@ -80,6 +80,11 @@
         that the calendar is short one full day after 23 cycles (299 years). In this case, the 23rd cycle can simply
         include one extra day, making the pattern "SSL SSL SSL SSL L" for that cycle.
     </p>
+    <p>
+        After one grand cycle (299 years), a total of 93380.989 days have passed, and the calendar yields 93381,
+        meaning that the calendar ends up a day <i>ahead</i> after 90.909 grand cycles (approximately 27182 years).
+        As such, no additional adjustment is made.
+    </p>
 
     <p>
         Because it'd otherwise be difficult to determine which years are leap years, etc., the date is generally written
@@ -98,7 +103,7 @@
         The source code can be imported by including <code class="language-html" style="padding: 0.3em;">&lt;script
             src="<a
                 href="https://pixielf.github.io/MAGI/static/cleressianDate.js">https://pixielf.github.io/MAGI/static/cleressianDate.js</a>"&gt;&lt;/script&gt;</code>
-        in the HTML file.
+        in the HTML file. It defines a class, <code class="language-js">CleressianDate</code> with the following:
     </p>
 
     &nbsp;
