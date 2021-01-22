@@ -1,0 +1,39 @@
+  /* hover tooltip https://stackoverflow.com/a/56425754 */
+  .tooltip {
+    position: relative;
+    outline: none;
+  }
+  
+  .tooltip strong {
+    line-height: 30px;
+  }
+  
+  .tooltip:hover {
+    text-decoration: none;
+  }
+  
+  .tooltip span {
+    z-index: 10;
+    display: none;
+    padding: 14px 20px;
+    margin-top: 60px;
+    margin-left: -160px;
+    width: 300px;
+    line-height: 16px;
+  
+    /* CSS3 extras */
+    border-radius: 2px;
+    box-shadow: 0px 0px 8px 4px #666;
+    
+    /* opacity: 0.8; */
+  }
+  
+  .tooltip:hover span {
+    display: inline;
+    position: absolute;
+    bottom: 2em;
+    left: 0;
+    border: 2px solid #FFF;
+    color: #EEE;
+    background: #333 url(http://www.menucool.com/tooltip/cssttp/css-tooltip-gradient-bg.png) repeat-x 0 0;
+  }

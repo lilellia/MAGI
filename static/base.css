@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700;900&display=swap');
+
+body {
+  background-color: #201e24;
+  color: #e7dff0;
+  margin: 2em;
+  font-family: "Noto Serif JP", serif;
+}
+
+h2 {
+  background: #644c91;
+  padding: 0.3em 0 0.3em 1ex;
+}
+
+li {
+  margin-bottom: 1em;
+}
+
+.strong {
+  font-weight: bold;
+}
+
+/* maiden rank table */
+
+table.maiden-ranks {
+  float: right;
+  border-collapse: collapse;
+  margin: 0 0 1em 1em;
+}
+
+table.maiden-ranks th {
+  background: #2f2a38;
+  text-align: center;
+  padding: 0.5em;
+  border: 1px solid #aaa;
+}
+
+table.maiden-ranks td {
+  text-align: center;
+  padding: 0.5em;
+  border: 1px solid #aaa;
+}
+
+table.known-spells th {
+  background: #2f2a38;
+  text-align: right;
+  padding: 1em;
+}
+
+table.known-spells td {
+  text-align: left;
+  padding: 1em;
+}
+
+
+/* link coloring */
+
+a {
+  color: #a598b3;
+}
+
+a.ref {
+  vertical-align: super;
+  font-size: 60%;
+}
+
+a.null {
+  color: #ffabb4;
+}
+
+rt {
+  font-size: 70%;
+}
+
+blockquote {
+  border-left: 3px solid #2f2a38;
+  padding: 0 0 0 1em;
+  font-size: 90%;
+  font-style: italic;
+}
