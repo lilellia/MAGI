@@ -3,98 +3,315 @@
 
 <head>
     <title>Timeline</title>
+    <meta charset="UTF-8">
     <link rel="stylesheet" href="../static/base.css">
+    <script src="../static/cleressianDate.js"></script>
 </head>
+
+<style>
+    #calendar {
+        width: 100%;
+    }
+    .dayColumn {
+        width: 3%;
+        font-size: 60%;
+    }
+
+    .monthColumn {
+        width: 9.7%;
+        font-size: 60%;
+    }
+
+    .springTerm {
+        background: #1f5c06;
+    }
+
+    .autumnTerm {
+        background: #694109;
+    }
+
+    .summerBreak {
+        background: #808200;
+    }
+
+    .winterBreak {
+        background: #005066;
+    }
+
+    .neyu {
+        background: #76027a;
+    }
+</style>
 
 <body>
 
     <h1>Timeline</h1>
 
-    <h2>7:1:1 (1795)</h2>
-    <ul>
-        <li>Sirelle 01 (.001): Clerèssian monarchy abolished</li>
-    </ul>
+    <div>
+        <h2>
+            <button onclick="changeYear(-1);">←</button> &nbsp;
+            <span id="_grandCycle">7</span>:<span id="_cycle">17</span>:<span id="_year">12</span>
+            (<span id="_absyear">2014</span>)
+            &nbsp; <button onclick="changeYear(1);">→</button>
+        </h2>
+        <div>
+            <table id="calendar" class="pretty">
+            </table>
+        </div>
+    </div>
 
-    <h2>7:15:12 (1988)</h2>
-    <ul>
-        <li>Sirelle 08 (.008): <a href="../characters/kaskei_ari.html">Kaskei Ari</a> is born</li>
-        <li>Fis 19 (.121): <a href="../characters/molva_natalia.html">Molva Natalia</a> is born</li>
-    </ul>
+    <div id="timeline-list">
 
-    <h2>7:16:5 (1994)</h2>
-    <ul>
-        <li>Kria 01 (.205): <a href="../characters/miú_aya.html">Miú Ari</a> is born</li>
-    </ul>
-
-    <h2>7:16:9 (1998)</h2>
-    <ul>
-        <li>Tiri 06 (.040): <a href="../characters/amara_minori.html">Amara Minori</a> is born</li>
-        <li>Klesni 11 (.147): <a href="../characters/calleni_nia.html">Calleni Nia</a> is born</li>
-        <li>Kria 32 (.236): <a href="../characters/molva_atris.html">Molva Atris</a> is born</li>
-    </ul>
-
-    <h2>7:16:10 (1999)</h2>
-    <ul>
-        <li>Brilia 09 (.281): <a href="../characters/molva_iselle.html">Molva Iselle</a> is born</li>
-    </ul>
-
-    <h2>7:16:13 (2002)</h2>
-    <ul>
-        <li>Pelio 14 (.184): <a href="../characters/calleni_rena.html">Calleni Rena</a> is born</li>
-    </ul>
-
-    <h2>7:17:5 (2007)</h2>
-    <ul>
-        <li>Neyu 06 (.312): Ari and Natalia graduate high school at age 17</li>
-    </ul>
-
-    <h2>7:17:6 (2008)</h2>
-    <ul>
-        <li>Sirelle 01 (.001): Ari joins Clerèssian Armed Forces as army soldier and concurrently trains as CIA analyst
-        </li>
-    </ul>
-
-    <h2>7:17:7 (2009)</h2>
-    <ul>
-        <li>Klesni 18 (.154): Ari joins Magical Combat Assist as analyst</li>
-    </ul>
-
-    <h2>7:17:8 (2010)</h2>
-    <ul>
-        <li>Sui 12 (.250): Minori's Maiden powers are unsealed by Aya</li>
-        <li>Sui 28 (.266): Minori begins training with MCA; Ari is appointed as her handler</li>
-    </ul>
-
-    <h2>7:17:9 (2011)</h2>
-    <ul>
-        <li>Neyu 07 (.313): Natalia graduates university at age 21</li>
-    </ul>
-
-    <h2>7:17:10 (2012)</h2>
-    <ul>
-        <li>Tiri 03 (.037): Natalia is hired as personal assist at Celtar Corporation</li>
-    </ul>
-
-    <h2>7:17:11 (2013)</h2>
-    <ul>
-        <li>Enna 28 (.096): <a href="../events/siel-shopping-center-incident.md">terrorist attack on Siel Shopping
-                Center</a>; Nia dies at age 14</li>
-        <li>Klesni 01 (.137): Minori leaves CIA-MCA</li>
-        <li>Klesni 18 (.154): Minori transfers to Irèle HS for autumn term</li>
-    </ul>
-
-    <h2>7:17:12 (2014)</h2>
-    <ul>
-        <li>Enna 28 (.096): <a class="null" href="operation-birthday">terrorist attack on Irèle train station</a>
-            stopped by Minori and Ari</li>
-        <li>Enna 29 (.097): Minori confirms Iselle as Maiden</li>
-        <li>Fis 04 (.106): Minori investigates Imprint in Siel and discovers <a class="null"
-                href="../characters/stroa-kisa">Col. Stroa</a> as part of agency conspiracy; Siel Middle School choir
-            performance</li>
-        <li>Fis 18 (.120): Minori and Iselle leave Irèle to travel the northern region</li>
-        <li>Fis 19 (.121): Minori unseals Iselle's powers in Tinène castle</li>
-    </ul>
-
+    </div>
 </body>
 
 </html>
+
+<script>
+let EVENTS = [{
+    date: new CleressianDate(7, 1, 1, 'Sirelle', 1),
+    event: "Clerèssian monarchy is disestablished"
+},
+
+{
+    date: new CleressianDate(7, 15, 12, 'Sirelle', 8),
+    event: '<a href="../characters/kaskei_ari">Kaskei Ari</a> is born'
+},
+
+{
+    date: new CleressianDate(7, 15, 12, 'Fis', 19),
+    event: '<a href="../characters/molva_natalia">Molva Natalia</a> is born'
+},
+
+{
+    date: new CleressianDate(7, 16, 5, 'Kria', 1),
+    event: '<a href="../characters/miú_aya.html">Miú Aya</a> is born'
+},
+{
+    date: new CleressianDate(7, 16, 9, 'Tiri', 6),
+    event: '<a href="../characters/amara_minori.html">Amara Minori</a> is born'
+},
+{
+    date: new CleressianDate(7, 16, 9, 'Klesni', 11),
+    event: '<a href="../characters/calleni_nia.html">Calleni Nia</a> is born'
+},
+{
+    date: new CleressianDate(7, 16, 9, 'Kria', 32),
+    event: '<a href="../characters/molva_atris.html">Molva Atris</a> is born'
+},
+{
+    date: new CleressianDate(7, 16, 10, 'Brilia', 9),
+    event: '<a href="../characters/molva_iselle.html">Molva Iselle</a> is born'
+},
+{
+    date: new CleressianDate(7, 16, 13, 'Pelio', 14),
+    event: '<a href="../characters/calleni_rena.html">Calleni Rena</a> is born'
+},
+{
+    date: new CleressianDate(7, 17, 5, 'Neyu', 6),
+    event: 'Ari and Natalia graduate high school at age 17'
+},
+{
+    date: new CleressianDate(7, 17, 6, 'Sirelle', 1),
+    event: 'Ari joins Clerèssian Armed Forces as army soldier and concurrently trains as CIA analyst'
+},
+{
+    date: new CleressianDate(7, 17, 7, 'Klesni', 18),
+    event: 'Ari joins Magical Combat Assist as analyst'
+},
+{
+    date: new CleressianDate(7, 17, 8, 'Sui', 12),
+    event: "Aya unseals Minori's Maiden powers"
+},
+{
+    date: new CleressianDate(7, 17, 8, 'Sui', 28),
+    event: "Minori begins training with MCA with Ari appointed as her handler"
+},
+{
+    date: new CleressianDate(7, 17, 9, 'Neyu', 7),
+    event: "Natalia graduates university at age 21"
+},
+{
+    date: new CleressianDate(7, 17, 10, 'Tiri', 3),
+    event: "Natalia is hired as personal assistant at Celtar Corporation"
+},
+{
+    date: new CleressianDate(7, 17, 11, 'Enna', 28),
+    event: '<a href="../events/siel-shopping-center-incident.html">terrorist attack on Siel Shopping Center</a>'
+},
+{
+    date: new CleressianDate(7, 17, 11, 'Enna', 28),
+    event: 'Nia dies at age 14'
+},
+{
+    date: new CleressianDate(7, 17, 11, 'Klesni', 1),
+    event: "Minori leaves Magical Combat Assist"
+},
+{
+    date: new CleressianDate(7, 17, 11, 'Klesni', 18),
+    event: "Minori transfers to Irèle High School for autumn term"
+},
+{
+    date: new CleressianDate(7, 17, 12, 'Enna', 28),
+    event: '<a class="null" href=../events/operation-birthday.html>attempted terrorist attack on Irèle train station</a> stopped by Minori and Ari'
+},
+{
+    date: new CleressianDate(7, 17, 12, 'Enna', 29),
+    event: 'Minori confirms Iselle as a Maiden'
+},
+{
+    date: new CleressianDate(7, 17, 12, 'Fis', 4),
+    event: 'Minori investigates Imprint in Siel and discovers <a class="null" href="../characters/stroa-kisa.html">Col. Stroa</a> as part of agency conspiracy'
+},
+{
+    date: new CleressianDate(7, 17, 12, 'Fis', 4),
+    event: 'Siel Middle School choir performance'
+},
+{
+    date: new CleressianDate(7, 17, 12, 'Fis', 18),
+    event: 'Minori and Iselle leave Irèle to travel the northern region'
+},
+{
+    date: new CleressianDate(7, 17, 12, 'Fis', 19),
+    event: "Minori unseals Iselle's Maiden powers in Tinène castle"
+}
+];
+
+/** eventsInYear
+ * Filter the events to the given absolute year.
+ * 
+ * @param {int} the absolute year
+ * @yields {object} events that occur in the given year, as {date:..., event:...} objects
+*/
+function* eventsInYear(absyear) {
+    for(let e of EVENTS) {
+        if(e.date.toAbsoluteDate().year == absyear) { yield e; }
+    }
+};
+
+function cellColor(month, day) {
+    switch(month) {
+        case 1: case 2: case 3: return 'springTerm';
+        case 6: case 7: case 8: return 'autumnTerm';
+        case 9: return 'winterBreak';
+        case 10: return 'neyu';
+
+        case 4:
+            return (day <= 17) ? 'springTerm' : 'summerBreak';
+        case 5:
+            return (day <= 17) ? 'summerBreak' : 'autumnTerm';
+    }
+    
+}
+
+function drawTable(absyear) {
+    let a = CleressianDate.fromAbsoluteDate(absyear, 1);
+
+    // generate the table
+    let table = document.getElementById("calendar");
+
+    // draw header
+    let html = '<thead><tr><th></th>\n'
+    for(let month = 1; month <= 10; month++) {
+        html += "<th>" + CleressianDate.MONTHS[month] + "</th>";
+    }
+    html += "</thead>";
+
+    for(let day = 1; day <= 34; day++) {
+        html += "<tr>"
+        for(let month=0; month <= 10; month++) {
+            if(month == 0) {
+                html += "<th class='dayColumn'>" + day + "</th>";
+            } else {
+                try {
+                    // if this is valid date, do normal date stuff
+                    let x = new CleressianDate(a.grandCycle, a.cycle, a.year, month, day);
+                    let color = cellColor(month, day);
+                    html += "<td class='monthColumn " + color + "''>";
+                    for (let inst of EVENTS) {
+                        if(inst.date.equals(x)) {
+                            html += "<p>" + inst.event + "</p>";
+                        }
+                    }
+
+                    html += "</td>";
+                } catch (RangeError) {
+                    // the date is invalid (Neyu), so fill the cell
+                    html += "<td class='monthColumn' style='background-color: #aaa;'></td>"
+                };
+            }
+        }
+        html += "</tr>";
+    }
+
+    table.innerHTML = html;
+};
+
+
+function readYear() {
+    let elG = document.getElementById("_grandCycle");
+    let elC = document.getElementById("_cycle");
+    let elY = document.getElementById("_year");
+
+    let g = parseInt(elG.innerHTML);
+    let c = parseInt(elC.innerHTML);
+    let y = parseInt(elY.innerHTML);
+
+    return new CleressianDate(g, c, y).toAbsoluteDate().year;
+};
+
+function setYear(absYear) {
+    let a = CleressianDate.fromAbsoluteDate(absYear, 1);
+
+    document.getElementById("_grandCycle").innerHTML = a.grandCycle;
+    document.getElementById("_cycle").innerHTML = a.cycle;
+    document.getElementById("_year").innerHTML = a.year;
+    document.getElementById("_absyear").innerHTML = absYear;
+
+    drawTable(absYear);
+}
+
+function changeYear(delta) {
+    setYear(readYear() + delta);
+}
+
+function writeTimeline() {
+    // ensure events are in the proper order
+    let events = [...EVENTS];
+    events.sort((a, b)  => { a.date.lt(b.date) });
+
+    let html = "";
+
+    let i = 0;
+    let prevYear = null;
+    while (i < events.length) {
+        let e = events[i];
+
+        // make headers as necessary
+        if (e.date.toAbsoluteDate().year != prevYear) {
+            // close previous ul
+            if(prevYear != null) { html += "</ul>"; }
+
+            // add new header and open new list
+            html += "<h2>" + e.date.strftime("%g:%c:%y (%04Y)") + "</h2>\n<ul>";
+        }
+
+        // actually write the event
+        html += "<li>" + e.date.strftime("%B %02d (.%03j)") + ": " + e.event + "</li>";
+
+        // update state
+        prevYear = e.date.toAbsoluteDate().year;
+        i++;
+
+    };
+
+    // close the final list
+    html += "</ul>"
+
+    document.getElementById('timeline-list').innerHTML = html;
+}
+
+drawTable(readYear());
+writeTimeline();
+
+</script>
