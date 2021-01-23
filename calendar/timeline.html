@@ -263,7 +263,6 @@ function readYear() {
 
 function setYear(absYear) {
     let a = CleressianDate.fromAbsoluteDate(absYear, 1);
-    console.log(a.toString());
 
     document.getElementById("_grandCycle").innerHTML = a.grandCycle;
     document.getElementById("_cycle").innerHTML = a.cycle;
@@ -271,11 +270,11 @@ function setYear(absYear) {
     document.getElementById("_absyear").innerHTML = absYear;
 
     drawTable(absYear);
+    window.scrollTo(0, 0); // scroll to top
 }
 
 function changeYear(delta) {
     setYear(readYear() + delta);
-    window.scrollTo(0, 0); // scroll to top
 }
 
 function writeTimeline() {
