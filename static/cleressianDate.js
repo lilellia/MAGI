@@ -107,10 +107,20 @@ class CleressianDate {
      * @param {int} day the day within the year (defaults to 1)
      * 
      * @returns {CleressianDate}
+     * 
+     * 
+     * The grand cycle, G, starts in the year 299(G-1)+1, so the years, y, which fall in the grand cycle are precisely
+     * 299(G-1) + 1 <= y < 299G + 1. We can manipulate this inequality to give G <= (y + 298)/299 < G + 1, and since
+     * G and G+1 are both integers, we have G = floor[ (y+298)/299 ].
+     * 
+     * Similarly, the cycle (counted absolutely) C begins in 13(C-1)+1, which yields C = floor[ (y+12)/13 ]. However,
+     * we loop the cycle count so that C=24 is equivalent to C=1. Thus, a simple modular operation can be performed
+     * (as long as we remember to move C=23k to C=23 instead of C=0).
+     * 
      */
      static fromAbsoluteDate(year, day=1) {
-        let grandCycle = 1 + Math.floor(year / (1 + 23 * 13));
-        let cycle = Math.ceil(year / 13) % 23;
+        let grandCycle = Math.floor((year + 298) / 299);
+        let cycle = Math.floor((year + 12) / 13) % 23;
         year = year % 13;
         let month = 1 + Math.floor(day / 34);
         day = day % 34;
