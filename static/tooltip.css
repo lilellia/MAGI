@@ -2,6 +2,7 @@
   .tooltip {
     position: relative;
     outline: none;
+    border-bottom: 1px dotted #aaa;
   }
   
   .tooltip strong {
@@ -16,9 +17,9 @@
     z-index: 10;
     display: none;
     padding: 14px 20px;
-    margin-top: 60px;
+    /* margin-top: 60px;
     margin-left: -160px;
-    width: 300px;
+    width: 300px; */
     line-height: 16px;
   
     /* CSS3 extras */
