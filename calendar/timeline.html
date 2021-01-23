@@ -190,6 +190,7 @@ function* eventsInYear(absyear) {
 };
 
 function cellColor(month, day) {
+    // color cell according to school term calendar
     switch(month) {
         case 1: case 2: case 3: return 'springTerm';
         case 6: case 7: case 8: return 'autumnTerm';
@@ -262,6 +263,7 @@ function readYear() {
 
 function setYear(absYear) {
     let a = CleressianDate.fromAbsoluteDate(absYear, 1);
+    console.log(a.toString());
 
     document.getElementById("_grandCycle").innerHTML = a.grandCycle;
     document.getElementById("_cycle").innerHTML = a.cycle;
@@ -273,6 +275,7 @@ function setYear(absYear) {
 
 function changeYear(delta) {
     setYear(readYear() + delta);
+    window.scrollTo(0, 0); // scroll to top
 }
 
 function writeTimeline() {
@@ -293,7 +296,8 @@ function writeTimeline() {
             if(prevYear != null) { html += "</ul>"; }
 
             // add new header and open new list
-            html += "<h2>" + e.date.strftime("%g:%c:%y (%04Y)") + "</h2>\n<ul>";
+            let onclick = 'setYear(' + e.date.toAbsoluteDate().year + ');';
+            html += "<h2 onclick='" + onclick + "'>" + e.date.strftime("%g:%c:%y (%04Y)") + "</h2>\n<ul>";
         }
 
         // actually write the event
