@@ -14,12 +14,25 @@
  * zfill(3, 5) --> "00003"
  */
 zfill = function (value, padLength) {
-    s = value.toString();
+    let s = value.toString();
     while (s.length < padLength) {
         s = "0" + s;
     }
     return s;
 };
+
+/**
+ * 
+ * @param {*} key 
+ * @param {*} defaultValue 
+ */
+Object.prototype.get = function(key, defaultValue = undefined) {
+    if ( (val = this[key] ) !== undefined) {
+        return val;
+    }
+
+    return defaultValue;
+}
 
 
 class CleressianDate {
@@ -94,10 +107,10 @@ class CleressianDate {
      * @param {int|string} m the new value of month (int -> month index, string -> month name)
      */
     set month(m) {
-        if (typeof (m) === 'string') {
+        if (typeof(m) === 'string') {
             // month value is string, which we assume is the (full) month name
             // indexOf() returns -1 for not found; we also exclude 0, which holds the empty string
-            let idx = CleressianDate.MONTHS.indexOf(m);
+            const idx = CleressianDate.MONTHS.indexOf(m);
             if (idx <= 0) {
                 throw new RangeError("invalid month name " + m);
             }
@@ -118,7 +131,7 @@ class CleressianDate {
             throw new TypeError("day must be an integer, not " + d);
         }
 
-        let maxDays = CleressianDate.daysInMonth(this.cycle, this.year, this.month);
+        const maxDays = CleressianDate.daysInMonth(this.cycle, this.year, this.month);
         if (d < 1 || d > maxDays) {
             throw new RangeError("cycle value must be between 1 and " + maxDays + ", not " + d);
         }
@@ -204,7 +217,7 @@ class CleressianDate {
      * An alternate constructor using the absolute year and day.
      *
      * @param {int} year the absolute year 
-     * @param {int} day the day within the year (defaults to 1)
+     * @param {int=} day the day within the year (defaults to 1)
      * 
      * @returns {CleressianDate}
      * 
@@ -219,10 +232,10 @@ class CleressianDate {
      * 
      */
     static fromAbsoluteDate(year, day = 1) {
-        let grandCycle = Math.floor((year + 298) / 299);
-        let cycle = Math.floor((year + 12) / 13) % 23;
+        const grandCycle = Math.floor((year + 298) / 299);
+        const cycle = Math.floor((year + 12) / 13) % 23;
         year = year % 13;
-        let month = 1 + Math.floor(day / 34);
+        const month = 1 + Math.floor(day / 34);
         day = day % 34;
 
         return new CleressianDate(grandCycle, cycle || 23, year || 13, month || 10, day || 34);
@@ -235,13 +248,31 @@ class CleressianDate {
      * 
      */
     toAbsoluteDate() {
-        let year = 23 * 13 * (this.grandCycle - 1) + 13 * (this.cycle - 1) + this.year;
-        let day = 34 * (this.month - 1) + this.day;
-
         return {
-            "year": year,
-            "day": day
+            "year": 23 * 13 * (this.grandCycle - 1) + 13 * (this.cycle - 1) + this.year,
+            "day": 34 * (this.month - 1) + this.day
         };
+    }
+
+    /**
+     * 
+     * @param {Object} repl the replacements to make
+     */
+    replace(repl) {
+        // use this object as defaults, but overwrite those with the given replacements
+        const {
+            grandCycle = this.grandCycle,
+            cycle = this.cycle,
+            year = this.year,
+            month = this.month,
+            day = this.day
+        } = repl;
+
+        return new CleressianDate(grandCycle, cycle, year, month, day);
+    }
+
+    copy() {
+        return this.replace({});
     }
 
     /** strftime()
@@ -266,7 +297,7 @@ class CleressianDate {
      */
     strftime(format) {
         // handle the two shortcuts
-        let shortcutLookup = {
+        const shortcutLookup = {
             "%x": "%g:%c:%y %B %d",
             "%X": "%04Y.%03j"
         };
@@ -276,7 +307,7 @@ class CleressianDate {
 
 
         // handle all of the numeric lookups
-        let numCodeLookup = {
+        const numCodeLookup = {
             "g": this.grandCycle,
             "c": this.cycle,
             "y": this.year,
@@ -286,17 +317,17 @@ class CleressianDate {
             "Y": this.toAbsoluteDate().year
         }
         for (let key in numCodeLookup) {
-            let value = numCodeLookup[key];
-            let match = format.match(new RegExp('%(0(\\d+))?' + key));
+            const value = numCodeLookup[key];
+            const match = format.match(new RegExp('%(0(\\d+))?' + key));
 
             if (match) {
-                let padLength = (match[2] === undefined) ? 1 : parseInt(match[2]);
+                const padLength = (match[2] === undefined) ? 1 : parseInt(match[2]);
                 format = format.replace(match[0], zfill(value, padLength));
             }
         }
 
         // handle the nonnumeric lookups
-        let alphaCodeLookup = {
+        const alphaCodeLookup = {
             "%b": this.monthName.substring(0, 3),
             "%B": this.monthName,
             "%%": "%"
@@ -310,17 +341,162 @@ class CleressianDate {
 
     /** toString
      * override toString to allow formatting (according to strftime specs)
-     * @param {string} format the format string to use (defaults to "%x")
+     * @param {string=} format the format string to use (defaults to "%x")
      */
     toString(format = "%x") {
         return this.strftime(format);
     }
 
+    /**
+     * Create a CleressianDate from a string template. This uses the same %_ templates as strftime.
+     * @param {str} dateStr 
+     * @param {str="%x"} template 
+     * @throws {RangeError} if the date string does not match the template
+     * @return {CleressianDate} the interpreted CleressianDate
+     */
+    static strptime(dateStr, template = "%x") {
+        const _template = template;
+
+        // replace "%x" and "%X" with their long-form versions
+        template = template.replace("%x", "%g:%c:%y %B %d").replace("%X", "%04Y.%03j");
+
+        // now go through the template specifications and replace %_ with the proper regex structures
+        const convert = function (key) {
+            switch (key) {
+                case "g":
+                case "c":
+                case "y":
+                case "m":
+                case "d":
+                case "j":
+                case "Y":
+                    // all of the numeric keys
+                    // we use parseInt because the regexp will read padLength as, e.g., "03", but we want the
+                    // new regexp to simply be ...{3,}...
+                    return function(match, padLength, offset, string) {
+                        padLength = padLength || "1";
+                        return "(?<" + key + ">\\d{" + parseInt(padLength, 10) + ",})";
+                    };
+                case "b":
+                    // short month names
+                    return function(match, offset, string) {
+                        const shortNames = CleressianDate.MONTHS.slice(1, ).map(s => s.substring(0, 3));
+                        return "(?<b>" + shortNames.join("|") + ")";
+                    };
+                case "B":
+                    // long month names
+                    return function(match, offset, string) {
+                        return "(?<B>" + CleressianDate.MONTHS.slice(1, ).join("|") + ")";
+                    }
+                case "%":
+                    // return a literal percent sign
+                    return function(match, offset, string) {
+                        return "%";
+                    }
+            };
+        }
+
+        for (let key of "gcymdjY") { template = template.replace(new RegExp('%(0\\d+)?' + key), convert(key)); }
+        for (let key of "bB%") { template = template.replace(new RegExp("%" + key), convert(key)); }
+
+        // at this point, template contains the *actual* regexp we can use to parse the date string
+        const match = dateStr.match(new RegExp("^" + template + "$"));
+        if(match === null) {
+            throw new RangeError("Date data « " + dateStr + " » does not match format « " + _template + " »");
+        }
+
+        const result = {};      // the values that will be used to create the new object
+
+        // first check for absolute dates
+        let a = CleressianDate.fromAbsoluteDate(1, 1);
+
+        if (match.groups.Y !== undefined) {
+            const absyear = parseInt(match.groups.Y, 10);
+            a = CleressianDate.fromAbsoluteDate(absyear, 1);
+
+            result.grandCycle = a.grandCycle;
+            result.cycle = a.cycle;
+            result.year = a.year;
+        }
+
+        if (match.groups.j !== undefined) {
+            const absday = parseInt(match.groups.j, 10);
+            const s = CleressianDate.fromAbsoluteDate(1, absday);
+            if (a === undefined) {
+                a = s.copy();
+            } else {
+                a = a.replace({month: s.month, day: s.day});
+            }
+
+            result.month = a.month;
+            result.day = a.day;
+        }
+
+        // now check for individual values
+        const update = function(reKey, longName) {
+            if (reKey in match.groups) {
+                const raw = match.groups[reKey];
+
+                const lookup = {
+                    // find the index of the month with that abbreviation
+                    "b": CleressianDate.MONTHS.map(x => x.substring(0, 3)).indexOf(raw),
+
+                    // just leave the month value intact
+                    "B": raw
+                }
+                const val = lookup.get(reKey, parseInt(raw, 10));
+
+                if (longName in result) {
+                    // we already defined this value in the absolute date
+
+                    // true when the year is changed, false otherwise
+                    const changeYear = Boolean(reKey.match(/[gcy]/));
+
+                    // determine the "new" value
+                    const repl = {}; repl[longName] = val;
+                    const updated = a.replace(repl);
+
+                    // warning text
+                    const fmt = changeYear ? "%04Y (%g:%c:%y)" : ".%03j (%B %02d)";
+                    const prev = a.strftime(fmt);
+                    const curr = updated.strftime(fmt);
+
+                    if (prev !== curr) {
+                        console.warn("strptime: " + longName + " overwritten: " + prev + " -> " + curr);
+                    }
+                }
+
+                const repl = {}; repl[longName] = val;
+                a = a.replace(repl);
+                result[longName] = val;
+            }
+        }
+
+        update("g", "grandCycle");
+        update("c", "cycle");
+        update("y", "year");
+        update("m", "month");
+        update("b", "month");
+        update("B", "month");
+        update("d", "day");
+
+        // use 1 as default for all fields, overwritten by the values found above
+        const {
+            grandCycle = 1,
+            cycle = 1,
+            year = 1,
+            month = 1,
+            day = 1
+        } = result;
+
+        return new CleressianDate(grandCycle, cycle, year, month, day);
+    }
+
 
     /** plus()
      * Add a number of years and days to the given date.
-     * @param {int} years the number of years to add
-     * @param {int} days the number of days to add
+     * @param {int=} years the number of years to add
+     * @param {int=} days the number of days to add
      * 
      * @returns {CleressianDate} the new date
      */
@@ -329,16 +505,17 @@ class CleressianDate {
         x.year += years;
         x.day += days;
 
+        // adjust until a valid date
         while (true) {
-            let tmp = CleressianDate.fromAbsoluteDate(x.year, 1);
-            let daysInYear = CleressianDate.daysInYear(tmp.cycle, tmp.year);
+            offset = (x.day < 1) ? -1 : 0;
+            const tmp = CleressianDate.fromAbsoluteDate(x.year + offset);
+            const daysInYear = CleressianDate.daysInYear(tmp.cycle, tmp.year);
 
-            if (x.day <= daysInYear) {
-                break;
-            }
+            if (1 <= x.day && x.day <= daysInYear) { break; }
 
-            x.day -= daysInYear;
-            x.year++;
+            const adj = (x.day < 1) ? -1 : 1;
+            x.year += adj;
+            x.day -= adj * daysInYear;
         }
 
         return CleressianDate.fromAbsoluteDate(x.year, x.day);
@@ -346,29 +523,13 @@ class CleressianDate {
 
     /** minus()
      * Add a number of years and days to the given date.
-     * @param {int} years the number of years to add
-     * @param {int} days the number of days to add
+     * @param {int=} years the number of years to add
+     * @param {int=} days the number of days to add
      * 
      * @returns {CleressianDate} the new date
      */
     minus(years = 0, days = 0) {
-        let x = this.toAbsoluteDate();
-        x.year -= years;
-        x.day -= days;
-
-        while (true) {
-            let tmp = CleressianDate.fromAbsoluteDate(x.year - 1, 1);
-            let daysInYear = CleressianDate.daysInYear(tmp.cycle, tmp.year);
-
-            if (x.day > 0) {
-                break;
-            }
-
-            x.day += daysInYear;
-            x.year--;
-        }
-
-        return CleressianDate.fromAbsoluteDate(x.year, x.day);
+        return this.plus(-years, -days);
     }
 
     /** compare
@@ -458,12 +619,13 @@ class CleressianDate {
         let ax = x.toAbsoluteDate()
         let ay = y.toAbsoluteDate()
 
-        // First, get the day._ to line up.
+        // First, get the day to line up.
         if (ax.day <= ay.day) {
             result.days = ay.day - ax.day;
             ax.day = ay.day;
         } else {
-            let daysInYear = CleressianDate.daysInYear(ax.year);
+            const tmp = CleressianDate.fromAbsoluteDate(ax.year);
+            let daysInYear = CleressianDate.daysInYear(ax.cycle, ax.year);
             result.days = ay.day + (daysInYear - ax.day);
             ax.day = ay.day;
             ax.year++;
