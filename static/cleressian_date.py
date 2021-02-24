@@ -146,7 +146,11 @@ class CleressianDate:
     def _parse_month(val: Union[int, str]) -> int:
         """ Parse the given value into the corresponding month number. """
         try:
-            return int(float(val))
+            month = int(float(val))
+            if 1 <= month <= 10:
+                return month
+            else:
+                raise IndexError('')
         except ValueError:
             if not isinstance(val, str):
                 raise TypeError(f'month must be a string interpretable as an integer, not {val!r}')
@@ -154,6 +158,8 @@ class CleressianDate:
                 return 1 + CleressianDate.MONTHS[1:].index(val)
             except ValueError:
                 raise ValueError(f'month must be full name of month or integer between 1 and 10, not {val!r}')
+        except IndexError:
+            raise ValueError(f'month must be between 1 and 10, not {val!r}') from None
 
     @staticmethod
     def is_leap_year(cycle: int, year: int) -> bool:
@@ -234,7 +240,10 @@ class CleressianDate:
         d = day % 34
 
         # the "or _" calcs are used to emulate 1-indexing
-        return cls(g, c or 23, y or 13, m or 10, d or 34)
+        try:
+            return cls(g, c or 23, y or 13, m or 10, d or 34)
+        except Exception as e:
+            raise ValueError(f'invalid absolute date: ({year!r}, {day!r})') from e
 
     def to_absolute_date(self) -> AbsoluteDate:
         """ Convert a CleressianDate to a tuple describing the absolute year and day in year
@@ -442,7 +451,7 @@ class CleressianDate:
         try:
             years = 0
             days = int(float(other))
-        except ValueError:
+        except (ValueError, TypeError):
             if isinstance(other, collections.abc.Iterable):
                 try:
                     years, days = [int(float(x)) for x in other]
