@@ -3,13 +3,23 @@
 body {
   background-color: #201e24;
   color: #e7dff0;
-  margin: 2em;
+  margin: min(50px, 5%);
   font-family: "Noto Serif JP", serif;
 }
 
 h2 {
   background: #644c91;
   padding: 0.3em 0 0.3em 1ex;
+}
+
+h3 {
+  background: #8c70c0;
+  padding: 0.3em 1ex 0.3em 1ex;
+
+  /* fit to content (display: table as workaround for IE11) */
+  width: -moz-fit-content;
+  width: fit-content;
+  display: table;
 }
 
 li {
